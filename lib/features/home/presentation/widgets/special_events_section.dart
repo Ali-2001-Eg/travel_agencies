@@ -5,6 +5,8 @@ class SpecialEventsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final events = EventModel.getMockData();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,22 +27,24 @@ class SpecialEventsSection extends StatelessWidget {
 
         Gaps.v18(),
 
-        // Event cards
-        const EventCard(
-          title: 'Christmas Beach Party',
-          date: 'December 25, 2025',
-          location: 'Sharm El Sheikh',
-          imageGradient: [Color(0xFF8B0000), Color(0xFFDC143C)],
-        ),
+        // Event cards - using first two events from mock data
+        if (events.isNotEmpty)
+          EventCardWidget(
+            event: events[0],
+            isFavorite: false,
+            onToggleFavorite: () {},
+            onBook: () {},
+          ),
 
-        Gaps.v16(),
-
-        const EventCard(
-          title: 'New Year Gala Dinner',
-          date: 'December 31, 2025',
-          location: 'Hurghada',
-          imageGradient: [Color(0xFF1E3A8A), Color(0xFF3B82F6)],
-        ),
+        if (events.length > 1) ...[
+          Gaps.v16(),
+          EventCardWidget(
+            event: events[1],
+            isFavorite: false,
+            onToggleFavorite: () {},
+            onBook: () {},
+          ),
+        ],
       ],
     );
   }

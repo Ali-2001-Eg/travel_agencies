@@ -5,6 +5,8 @@ class PopularActivitiesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final excursions = ExcursionModel.getMockData();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,17 +27,14 @@ class PopularActivitiesSection extends StatelessWidget {
 
         Gaps.v18(),
 
-        // Activity card
-        const ActivityCard(
-          imageUrl:
-              'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400',
-          title: 'Luxor Temple Tour',
-          location: 'Luxor',
-          duration: '8 hours',
-          price: 55,
-          rating: 5,
-          category: 'Cultural',
-        ),
+        // Activity card - using first excursion from mock data
+        if (excursions.isNotEmpty)
+          ExcursionCard(
+            excursion: excursions[0],
+            isFavorite: false,
+            onToggleFavorite: () {},
+            onBook: () {},
+          ),
       ],
     );
   }

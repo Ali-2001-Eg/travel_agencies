@@ -5,6 +5,8 @@ class AdditionalServicesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final services = ServiceModel.getMockData();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,24 +27,20 @@ class AdditionalServicesSection extends StatelessWidget {
 
         Gaps.v18(),
 
-        // Service cards
-        const ServiceCard(
-          icon: '🏥',
-          title: 'Healthcare',
-          subtitle: '24/7 Medical Support',
-          buttonText: 'Request Service',
-          buttonColor: Color(0xFF00BFA5),
-        ),
+        // Service cards - using first two services from mock data
+        if (services.isNotEmpty)
+          ServiceCardWidget(
+            service: services[0],
+            onRequest: () {},
+          ),
 
-        Gaps.v16(),
-
-        const ServiceCard(
-          icon: '🧘‍♀️',
-          title: 'Spa & Massage',
-          subtitle: 'Relaxation Services',
-          buttonText: 'Request Service',
-          buttonColor: Color(0xFF00BFA5),
-        ),
+        if (services.length > 1) ...[
+          Gaps.v16(),
+          ServiceCardWidget(
+            service: services[1],
+            onRequest: () {},
+          ),
+        ],
       ],
     );
   }
