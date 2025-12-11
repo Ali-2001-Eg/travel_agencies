@@ -1,0 +1,55 @@
+import 'dart:async';
+
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../core/bloc/blocs.dart';
+import '../../core/enum/status.dart';
+import '../../core/http/either.dart';
+import '../../core/http/failure.dart';
+import '../../core/http/http.dart';
+import '../../core/params/params.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../core/helpers/helpers.dart';
+import '../../core/extensions/extensions.dart';
+import '../../core/router/router.dart';
+import '../../core/widgets/widgets.dart';
+import '../../core/localization/locale_keys.g.dart';
+
+part '../auth/blocs/forget_password/forget_password_event.dart';
+part '../auth/blocs/forget_password/forget_password_bloc.dart';
+part '../auth/data_source/forget_password_data_source.dart';
+part '../auth/blocs/login/login_event.dart';
+part '../auth/blocs/login/login_bloc.dart';
+part '../auth/data_source/login_data_source.dart';
+part '../auth/blocs/logout/logout_event.dart';
+part '../auth/blocs/logout/logout_bloc.dart';
+part '../auth/data_source/logout_data_source.dart';
+part '../auth/blocs/register/register_event.dart';
+part '../auth/blocs/register/register_bloc.dart';
+part '../auth/data_source/register_data_source.dart';
+part '../auth/blocs/social_auth/social_auth_event.dart';
+part '../auth/blocs/social_auth/social_auth_bloc.dart';
+part '../auth/data_source/social_auth_data_source.dart';
+part '../auth/blocs/verify_otp/verify_otp_event.dart';
+part '../auth/blocs/verify_otp/verify_otp_bloc.dart';
+part '../auth/data_source/verify_otp_data_source.dart';
+part '../auth/blocs/reset_password/reset_password_event.dart';
+part '../auth/blocs/reset_password/reset_password_bloc.dart';
+part '../auth/data_source/reset_password_data_source.dart';
+part '../auth/presentation/view/login_screen.dart';
+part '../auth/presentation/view/register_screen.dart';
+part '../auth/presentation/widgets/theme_toggle_button.dart';
+part '../auth/presentation/widgets/login_header.dart';
+part '../auth/presentation/widgets/register_header.dart';
+part '../auth/presentation/widgets/social_login_buttons.dart';
+part '../auth/presentation/widgets/login_form.dart';
+part '../auth/presentation/widgets/register_form.dart';
+part '../auth/presentation/widgets/login_card.dart';
+part '../auth/presentation/widgets/register_card.dart';
+part '../auth/presentation/widgets/user_avatar_icon.dart';
+part '../auth/presentation/widgets/sign_up_prompt.dart';
+part '../auth/presentation/widgets/login_prompt.dart';
