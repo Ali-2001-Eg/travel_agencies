@@ -76,7 +76,8 @@ class _LoginFormState extends State<LoginForm> {
                   LocalizedLabel(
                     text: LocaleKeys.remember_me,
                     style: context.textTheme.bodyMedium?.copyWith(
-                      color: context.isDarkMode ? Colors.white70 : Colors.black87,
+                      color:
+                          context.isDarkMode ? Colors.white70 : Colors.black87,
                     ),
                   ),
                 ],
@@ -105,7 +106,8 @@ class _LoginFormState extends State<LoginForm> {
           height: 56,
           child: ElevatedButton(
             onPressed: () {
-              // Login logic
+              // Login logic - navigate to home
+              context.go(Routes.home);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF00BFA5),

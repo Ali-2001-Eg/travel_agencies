@@ -171,7 +171,8 @@ class _RegisterFormState extends State<RegisterForm> {
           child: ElevatedButton(
             onPressed: _agreeToTerms
                 ? () {
-                    // Register logic
+                    // Register logic - navigate to home
+                    context.go(Routes.home);
                   }
                 : null,
             style: ElevatedButton.styleFrom(

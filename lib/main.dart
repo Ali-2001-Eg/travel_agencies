@@ -61,6 +61,9 @@ class MyApp extends StatelessWidget {
             BlocProvider(
               create: (context) => getIt<LocaleBloc>(),
             ),
+            BlocProvider(
+              create: (context) => getIt<CityBloc>(),
+            ),
           ],
           child: BlocListener<LocaleBloc, EnumState<AppLocale>>(
             listener: (context, state) {

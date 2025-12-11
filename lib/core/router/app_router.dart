@@ -13,6 +13,10 @@ abstract interface class AppRouter {
         path: Routes.register,
         builder: (context, state) => const RegisterScreen(),
       ),
+      GoRoute(
+        path: Routes.home,
+        builder: (context, state) => const HomeScreen(),
+      ),
     ],
   );
 

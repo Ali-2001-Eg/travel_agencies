@@ -38,5 +38,27 @@ abstract class  LocaleKeys {
   static const create_account = 'create_account';
   static const already_have_account = 'already_have_account';
   static const login_here = 'login_here';
+  static const discover_egypt = 'discover_egypt';
+  static const book_amazing_activities = 'book_amazing_activities';
+  static const scan_qr_code = 'scan_qr_code';
+  static const search_activities = 'search_activities';
+  static const popular_activities = 'popular_activities';
+  static const special_events = 'special_events';
+  static const additional_services = 'additional_services';
+  static const luxor_temple_tour = 'luxor_temple_tour';
+  static const hours = 'hours';
+  static const per_person = 'per_person';
+  static const book = 'book';
+  static const book_now = 'book_now';
+  static const healthcare = 'healthcare';
+  static const medical_support = 'medical_support';
+  static const spa_massage = 'spa_massage';
+  static const relaxation_services = 'relaxation_services';
+  static const request_service = 'request_service';
+  static const christmas_beach_party = 'christmas_beach_party';
+  static const new_year_gala_dinner = 'new_year_gala_dinner';
+  static const special_event = 'special_event';
+  static const december = 'december';
+  static const cultural = 'cultural';
 
 }

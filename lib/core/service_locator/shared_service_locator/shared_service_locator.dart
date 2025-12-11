@@ -55,6 +55,9 @@ class SharedServiceLocator {
     // Locale services
     getIt.registerLazySingleton<LocaleBloc>(() => LocaleBloc());
 
+    // City services
+    getIt.registerLazySingleton<CityBloc>(() => CityBloc());
+
     // getIt.registerLazySingleton<SyncBloc>(() => SyncBloc(syncManager: getIt<SyncManager>(), connectivityService: getIt<ConnectivityService>()));
   }
 }
