@@ -9,7 +9,9 @@ enum AppLocale {
   italian('it', 'Italiano', '🇮🇹'),
 
   russian('ru', 'Русский', '🇷🇺'),
-  polish('pl', 'Polski', '🇵🇱');
+  polish('pl', 'Polski', '🇵🇱'),
+  chinese('zh', '中文', '🇨🇳'),
+  japanese('ja', '日本語', '🇯🇵');
 
   const AppLocale(this.code, this.name, this.flag);
 

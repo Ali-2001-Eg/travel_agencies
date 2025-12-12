@@ -22,6 +22,13 @@ abstract class  LocaleKeys {
   static const login = 'login';
   static const dont_have_account = 'dont_have_account';
   static const register_now = 'register_now';
+  static const language_english = 'language_english';
+  static const language_arabic = 'language_arabic';
+  static const language_german = 'language_german';
+  static const language_spanish = 'language_spanish';
+  static const language_french = 'language_french';
+  static const language_italian = 'language_italian';
+  static const language_russian = 'language_russian';
   static const register_as_customer = 'register_as_customer';
   static const create_account_to_get_started = 'create_account_to_get_started';
   static const or_register_with_email = 'or_register_with_email';
@@ -60,13 +67,6 @@ abstract class  LocaleKeys {
   static const special_event = 'special_event';
   static const december = 'december';
   static const cultural = 'cultural';
-  static const language_english = 'language_english';
-  static const language_arabic = 'language_arabic';
-  static const language_german = 'language_german';
-  static const language_spanish = 'language_spanish';
-  static const language_french = 'language_french';
-  static const language_italian = 'language_italian';
-  static const language_russian = 'language_russian';
   static const home = 'home';
   static const excursions = 'excursions';
   static const events = 'events';
