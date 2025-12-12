@@ -118,87 +118,103 @@ class BookingsScreen extends StatelessWidget {
             else
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      final booking = upcomingBookings[index];
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: UpcomingBookingsCard(
-                          booking: booking,
-                          onCancel: () {
-                            // Show confirmation dialog
-                            showDialog(
-                              context: context,
-                              builder: (dialogContext) => AlertDialog(
-                                backgroundColor: context.isDarkMode
-                                    ? const Color(0xFF2A2A3E)
-                                    : Colors.white,
-                                title: LocalizedLabel(
-                                  text: LocaleKeys.cancel_booking,
-                                  style: context.textTheme.titleLarge?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: context.isDarkMode
-                                        ? Colors.white
-                                        : Colors.black87,
-                                  ),
-                                ),
-                                content: Text(
-                                  'Are you sure you want to cancel this booking?',
-                                  style: context.textTheme.bodyMedium?.copyWith(
-                                    color: context.isDarkMode
-                                        ? Colors.white70
-                                        : Colors.black54,
-                                  ),
-                                ),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(dialogContext),
-                                    child: LocalizedLabel(
-                                      text: LocaleKeys.cancel,
-                                      style: TextStyle(
-                                        color: context.isDarkMode
-                                            ? Colors.white70
-                                            : Colors.black54,
-                                      ),
-                                    ),
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      context.read<BookingsBloc>().add(
-                                            DeleteBookingEvent(booking.id),
-                                          );
-                                      Navigator.pop(dialogContext);
-                                      context.showSuccessMessage(
-                                        LocaleKeys.booking_cancelled,
-                                      );
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(0xFFEF4444),
-                                      foregroundColor: Colors.white,
-                                    ),
-                                    child: LocalizedLabel(
-                                      text: LocaleKeys.confirm,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                sliver: context.isTablet
+                    ? SliverGrid(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: context.responsive(1, 2),
+                          childAspectRatio: 1.5,
+                          crossAxisSpacing: 16,
+                          mainAxisSpacing: 16,
+                        ),
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            final booking = upcomingBookings[index];
+                            return UpcomingBookingsCard(
+                              booking: booking,
+                              onCancel: () {
+                                _showCancelDialog(context, booking);
+                              },
+                            );
+                          },
+                          childCount: upcomingBookings.length,
+                        ),
+                      )
+                    : SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            final booking = upcomingBookings[index];
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 16),
+                              child: UpcomingBookingsCard(
+                                booking: booking,
+                                onCancel: () {
+                                  _showCancelDialog(context, booking);
+                                },
                               ),
                             );
                           },
+                          childCount: upcomingBookings.length,
                         ),
-                      );
-                    },
-                    childCount: upcomingBookings.length,
-                  ),
-                ),
+                      ),
               ),
           ],
         );
       },
+    );
+  }
+
+  void _showCancelDialog(BuildContext context, BookingModel booking) {
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        backgroundColor:
+            context.isDarkMode ? const Color(0xFF2A2A3E) : Colors.white,
+        title: LocalizedLabel(
+          text: LocaleKeys.cancel_booking,
+          style: context.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold,
+            color: context.isDarkMode ? Colors.white : Colors.black87,
+          ),
+        ),
+        content: Text(
+          'Are you sure you want to cancel this booking?',
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: context.isDarkMode ? Colors.white70 : Colors.black54,
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: LocalizedLabel(
+              text: LocaleKeys.cancel,
+              style: TextStyle(
+                color: context.isDarkMode ? Colors.white70 : Colors.black54,
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              context.read<BookingsBloc>().add(
+                    DeleteBookingEvent(booking.id),
+                  );
+              Navigator.pop(dialogContext);
+              context.showSuccessMessage(
+                LocaleKeys.booking_cancelled,
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFEF4444),
+              foregroundColor: Colors.white,
+            ),
+            child: LocalizedLabel(
+              text: LocaleKeys.confirm,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

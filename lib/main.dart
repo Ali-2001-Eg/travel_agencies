@@ -26,6 +26,9 @@ Future<void> main() async {
   await HiveServiceImpl.init();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
   ]).then(
     (_) {
       runApp(LocalizationService.rootWidget(child: const MyApp()));

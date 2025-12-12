@@ -229,7 +229,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   .add(const ChangeTabEvent(HomeTab.excursions)),
               child: LocalizedLabel(
                 text: LocaleKeys.view_all,
-                style: AppTextTheme.bodyMedium.copyWith(color: Color(0xFF14B8A6)),
+                style:
+                    AppTextTheme.bodyMedium.copyWith(color: Color(0xFF14B8A6)),
               ),
             ),
           ],
@@ -240,11 +241,15 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
+            // Show more items on tablet
             itemCount: 3,
             itemBuilder: (context, index) {
               final excursion = excursions[index];
               return Container(
-                width: 300,
+                // Wider cards on tablet or just standard width?
+                // Let's keep width fixed but maybe show more in view if we changed viewport fraction,
+                // but standard ListView works fine.
+                width: context.responsive(300.0, 350.0),
                 margin: const EdgeInsets.only(right: 16),
                 child: ExcursionCard(
                   excursion: excursion,
@@ -274,8 +279,9 @@ class _HomeScreenState extends State<HomeScreen> {
         GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            // Responsive column count
+            crossAxisCount: context.responsive(3, 5),
             childAspectRatio: 0.9,
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
@@ -341,9 +347,11 @@ class _HomeScreenState extends State<HomeScreen> {
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           sliver: SliverGrid(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              // Responsive column count
+              crossAxisCount: context.responsive(1, 2),
               childAspectRatio: 1.3,
+              crossAxisSpacing: context.responsive(0.0, 16.0),
               mainAxisSpacing: 16,
             ),
             delegate: SliverChildBuilderDelegate(
@@ -378,9 +386,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return GridView.builder(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(20),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        // Responsive column count
+        crossAxisCount: context.responsive(1, 2),
         childAspectRatio: 1.4,
+        crossAxisSpacing: context.responsive(0.0, 16.0),
         mainAxisSpacing: 16,
       ),
       itemCount: events.length,
@@ -406,8 +416,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return GridView.builder(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(20),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        // Responsive column count
+        crossAxisCount: context.responsive(2, 4),
         childAspectRatio: 0.85,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
@@ -461,57 +472,102 @@ class _HomeScreenState extends State<HomeScreen> {
         .where((e) => state.favoriteIds.contains(e.id))
         .toList();
 
-    return ListView(
+    return CustomScrollView(
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.all(20),
-      children: [
-        if (excursions.isNotEmpty) ...[
-          LocalizedLabel(
-            text: LocaleKeys.favorite_excursions,
-            style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.isDarkMode ? Colors.white : Colors.black87,
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.all(20),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              if (excursions.isNotEmpty) ...[
+                LocalizedLabel(
+                  text: LocaleKeys.favorite_excursions,
+                  style: context.textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.isDarkMode ? Colors.white : Colors.black87,
+                  ),
+                ),
+                Gaps.v(16),
+              ],
+            ]),
+          ),
+        ),
+        if (excursions.isNotEmpty)
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            sliver: SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: context.responsive(1, 2),
+                childAspectRatio: 1.3,
+                crossAxisSpacing: context.responsive(0.0, 16.0),
+                mainAxisSpacing: 16,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final excursion = excursions[index];
+                  return ExcursionCard(
+                    excursion: excursion,
+                    isFavorite: true,
+                    onToggleFavorite: () {
+                      context
+                          .read<HomeNavigationBloc>()
+                          .add(ToggleFavoriteEvent(excursion.id));
+                    },
+                    onBook: () => _showBookingSheet(context, excursion, false),
+                  );
+                },
+                childCount: excursions.length,
+              ),
             ),
           ),
-          Gaps.v(16),
-          ...excursions.map((excursion) => Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: ExcursionCard(
-                  excursion: excursion,
-                  isFavorite: true,
-                  onToggleFavorite: () {
-                    context
-                        .read<HomeNavigationBloc>()
-                        .add(ToggleFavoriteEvent(excursion.id));
-                  },
-                  onBook: () => _showBookingSheet(context, excursion, false),
+        SliverPadding(
+          padding: const EdgeInsets.all(20),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              if (excursions.isNotEmpty) Gaps.v(24),
+              if (events.isNotEmpty) ...[
+                LocalizedLabel(
+                  text: LocaleKeys.favorite_events,
+                  style: context.textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: context.isDarkMode ? Colors.white : Colors.black87,
+                  ),
                 ),
-              )),
-          Gaps.v(24),
-        ],
-        if (events.isNotEmpty) ...[
-          LocalizedLabel(
-            text: LocaleKeys.favorite_events,
-            style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: context.isDarkMode ? Colors.white : Colors.black87,
+                Gaps.v(16),
+              ],
+            ]),
+          ),
+        ),
+        if (events.isNotEmpty)
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            sliver: SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: context.responsive(1, 2),
+                childAspectRatio: 1.4,
+                crossAxisSpacing: context.responsive(0.0, 16.0),
+                mainAxisSpacing: 16,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final event = events[index];
+                  return EventCardWidget(
+                    event: event,
+                    isFavorite: true,
+                    onToggleFavorite: () {
+                      context
+                          .read<HomeNavigationBloc>()
+                          .add(ToggleFavoriteEvent(event.id));
+                    },
+                    onBook: () => _showBookingSheet(context, event, true),
+                  );
+                },
+                childCount: events.length,
+              ),
             ),
           ),
-          Gaps.v(16),
-          ...events.map((event) => Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: EventCardWidget(
-                  event: event,
-                  isFavorite: true,
-                  onToggleFavorite: () {
-                    context
-                        .read<HomeNavigationBloc>()
-                        .add(ToggleFavoriteEvent(event.id));
-                  },
-                  onBook: () => _showBookingSheet(context, event, true),
-                ),
-              )),
-        ],
+        // Add bottom padding
+        const SliverPadding(padding: EdgeInsets.only(bottom: 24)),
       ],
     );
   }

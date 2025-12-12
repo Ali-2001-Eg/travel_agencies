@@ -5,6 +5,10 @@ extension ContextExtensions on BuildContext {
 
   double get screenWidth => MediaQuery.of(this).size.width;
 
+  bool get isTablet => screenWidth >= 600;
+
+  T responsive<T>(T mobile, T tablet) => isTablet ? tablet : mobile;
+
   ThemeData get theme => Theme.of(this);
 
   TextTheme get textTheme => Theme.of(this).textTheme;
