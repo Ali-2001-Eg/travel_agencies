@@ -90,7 +90,11 @@ class BookingSheet extends StatelessWidget {
                           color: Colors.white.withValues(alpha: 0.9),
                           shape: BoxShape.circle,
                         ),
-                        child:  Icon(Icons.close, size: 20,color: HexColor.primaryColor,),
+                        child: Icon(
+                          Icons.close,
+                          size: 20,
+                          color: HexColor.primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -467,7 +471,6 @@ class BookingSheet extends StatelessWidget {
                                     color: context.isDarkMode
                                         ? Colors.white70
                                         : Colors.black54,
-
                                     fontSize: 20.sp,
                                   ),
                                 ),
@@ -475,10 +478,49 @@ class BookingSheet extends StatelessWidget {
                             ),
                             const SizedBox(width: 12),
                             Expanded(
-                              flex: 2,
                               child: ElevatedButton(
                                 onPressed: state.selectedDate != null
                                     ? () {
+                                        // Create booking
+                                        final booking = BookingModel(
+                                          id: DateTime.now()
+                                              .millisecondsSinceEpoch
+                                              .toString(),
+                                          itemId: isEvent
+                                              ? (item as EventModel)
+                                                  .id
+                                                  .toString()
+                                              : (item as ExcursionModel)
+                                                  .id
+                                                  .toString(),
+                                          itemName: isEvent
+                                              ? (item as EventModel).name
+                                              : (item as ExcursionModel).name,
+                                          itemType:
+                                              isEvent ? 'event' : 'excursion',
+                                          imageUrl: isEvent
+                                              ? (item as EventModel).imageUrl
+                                              : (item as ExcursionModel)
+                                                  .imageUrl,
+                                          location: isEvent
+                                              ? (item as EventModel).location
+                                              : (item as ExcursionModel)
+                                                  .location,
+                                          selectedDate: state.selectedDate!,
+                                          selectedTime: state.selectedTime,
+                                          numberOfPeople: state.numberOfPeople,
+                                          additionalNotes:
+                                              state.additionalNotes,
+                                          totalPrice:
+                                              state.calculateTotal(price),
+                                          bookingDate: DateTime.now(),
+                                        );
+
+                                        // Save booking
+                                        context
+                                            .read<BookingsBloc>()
+                                            .add(AddBookingEvent(booking));
+
                                         context.showSuccessMessage(
                                           LocaleKeys.booking_confirmed,
                                         );
@@ -503,7 +545,7 @@ class BookingSheet extends StatelessWidget {
                                     const SizedBox(width: 8),
                                     LocalizedLabel(
                                       text: LocaleKeys.confirm_booking,
-                                      style:  TextStyle(
+                                      style: TextStyle(
                                         fontWeight: FontWeight.w600,
                                         color: Colors.white,
                                         fontSize: 20.sp,

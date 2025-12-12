@@ -57,7 +57,7 @@ class ExcursionCard extends StatelessWidget {
                   children: [
                     Text(
                       excursion.name,
-                      style: context.textTheme.titleMedium?.copyWith(
+                      style: context.textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                         color:
                             context.isDarkMode ? Colors.white : Colors.black87,
@@ -68,12 +68,12 @@ class ExcursionCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       excursion.description,
-                      style: context.textTheme.bodySmall?.copyWith(
+                      style: context.textTheme.titleSmall?.copyWith(
                         color: context.isDarkMode
                             ? Colors.white70
                             : Colors.black54,
                       ),
-                      maxLines: 1,
+                      maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 8),

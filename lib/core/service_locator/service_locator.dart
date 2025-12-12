@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+import '../../features/home/data/cache/bookings_cache.dart';
+import '../../core/cache/bookings_cache_impl.dart';
 import '../bloc/blocs.dart';
 import '../extensions/extensions.dart';
 import 'package:get_it/get_it.dart';

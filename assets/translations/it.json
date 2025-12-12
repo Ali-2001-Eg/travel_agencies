@@ -147,5 +147,14 @@
   "service_trainer_name": "Personal Trainer",
   "service_trainer_desc": "Fitness e benessere",
   "service_guide_name": "Guida Turistica",
-  "service_guide_desc": "Tour privati"
+  "service_guide_desc": "Tour privati",
+  "upcoming_bookings": "Prenotazioni imminenti",
+  "my_bookings": "Le mie prenotazioni",
+  "days_until": "giorni a",
+  "today": "Oggi",
+  "tomorrow": "Domani",
+  "cancel_booking": "Annulla",
+  "no_upcoming_bookings": "Nessuna prenotazione imminente",
+  "booking_cancelled": "Prenotazione annullata con successo",
+  "confirm": "Conferma"
 }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:travel_agencies/core/cache/bookings_cache_impl.dart';
 
 import 'core/bloc/blocs.dart';
 import 'core/enum/app_locale.dart';
@@ -14,6 +15,7 @@ import 'core/localization/translation_service.dart';
 import 'core/notification/messaging_config.dart';
 import 'core/router/router.dart';
 import 'core/service_locator/service_locator.dart';
+import 'features/home/blocs/bookings_bloc.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -63,6 +65,11 @@ class MyApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => getIt<CityBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => BookingsBloc(
+                bookingsCache: BookingsCacheImpl(),
+              )..add(const LoadUpcomingBookingsEvent()),
             ),
           ],
           child: BlocListener<LocaleBloc, EnumState<AppLocale>>(

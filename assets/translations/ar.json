@@ -140,5 +140,14 @@
   "service_trainer_name": "مدرب شخصي",
   "service_trainer_desc": "لياقة بدنية وصحة",
   "service_guide_name": "مرشد سياحي",
-  "service_guide_desc": "جولات خاصة"
+  "service_guide_desc": "جولات خاصة",
+  "upcoming_bookings": "الحجوزات القادمة",
+  "my_bookings": "حجوزاتي",
+  "days_until": "أيام حتى",
+  "today": "اليوم",
+  "tomorrow": "غداً",
+  "cancel_booking": "إلغاء الحجز",
+  "no_upcoming_bookings": "لا توجد حجوزات قادمة",
+  "booking_cancelled": "تم إلغاء الحجز بنجاح",
+  "confirm": "تأكيد"
 }

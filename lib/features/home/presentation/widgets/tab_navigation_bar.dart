@@ -54,6 +54,12 @@ class TabNavigationBar extends StatelessWidget {
           ),
           _buildTabButton(
             context,
+            HomeTab.bookings,
+            Icons.notifications_active,
+            LocaleKeys.my_bookings,
+          ),
+          _buildTabButton(
+            context,
             HomeTab.favorites,
             Icons.favorite,
             LocaleKeys.favorites,

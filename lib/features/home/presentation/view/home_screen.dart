@@ -43,9 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           decoration: InputDecoration(
                             hintText: LocaleKeys.search_placeholder.tr(),
-                            hintStyle:AppTextTheme.headlineMedium.copyWith(
+                            hintStyle: AppTextTheme.headlineMedium.copyWith(
                               color: Colors.grey,
-                            ) ,
+                            ),
                             prefixIcon: const Icon(Icons.search),
                             filled: true,
                             fillColor: context.isDarkMode
@@ -118,6 +118,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return _buildEventsTab(context, state);
       case HomeTab.services:
         return _buildServicesTab(context, state);
+      case HomeTab.bookings:
+        return const BookingsScreen();
       case HomeTab.favorites:
         return _buildFavoritesTab(context, state);
     }
@@ -216,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             LocalizedLabel(
               text: LocaleKeys.trending_excursions,
-              style: context.textTheme.titleLarge?.copyWith(
+              style: context.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: context.isDarkMode ? Colors.white : Colors.black87,
               ),
@@ -227,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   .add(const ChangeTabEvent(HomeTab.excursions)),
               child: LocalizedLabel(
                 text: LocaleKeys.view_all,
-                style: const TextStyle(color: Color(0xFF14B8A6)),
+                style: AppTextTheme.bodyMedium.copyWith(color: Color(0xFF14B8A6)),
               ),
             ),
           ],

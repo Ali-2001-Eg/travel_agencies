@@ -163,7 +163,16 @@ class CodegenLoader extends AssetLoader{
   "service_trainer_name": "私人教练",
   "service_trainer_desc": "健身与健康",
   "service_guide_name": "导游",
-  "service_guide_desc": "私人旅游"
+  "service_guide_desc": "私人旅游",
+  "upcoming_bookings": "即将到来的预订",
+  "my_bookings": "我的预订",
+  "days_until": "天直到",
+  "today": "今天",
+  "tomorrow": "明天",
+  "cancel_booking": "取消",
+  "no_upcoming_bookings": "没有即将到来的预订",
+  "booking_cancelled": "预订已成功取消",
+  "confirm": "确认"
 };
 static const Map<String,dynamic> _ja = {
   "hello": "こんにちは",
@@ -465,7 +474,16 @@ static const Map<String,dynamic> _de = {
   "service_trainer_name": "Personal Trainer",
   "service_trainer_desc": "Fitness & Wellness",
   "service_guide_name": "Reiseleiter",
-  "service_guide_desc": "Private Touren"
+  "service_guide_desc": "Private Touren",
+  "upcoming_bookings": "Bevorstehende Buchungen",
+  "my_bookings": "Meine Buchungen",
+  "days_until": "Tage bis",
+  "today": "Heute",
+  "tomorrow": "Morgen",
+  "cancel_booking": "Stornieren",
+  "no_upcoming_bookings": "Keine bevorstehenden Buchungen",
+  "booking_cancelled": "Buchung erfolgreich storniert",
+  "confirm": "Bestätigen"
 };
 static const Map<String,dynamic> _ru = {
   "hello": "Привет",
@@ -616,7 +634,16 @@ static const Map<String,dynamic> _ru = {
   "service_trainer_name": "Персональный тренер",
   "service_trainer_desc": "Фитнес и здоровье",
   "service_guide_name": "Туристический гид",
-  "service_guide_desc": "Частные туры"
+  "service_guide_desc": "Частные туры",
+  "upcoming_bookings": "Предстоящие бронирования",
+  "my_bookings": "Мои бронирования",
+  "days_until": "дней до",
+  "today": "Сегодня",
+  "tomorrow": "Завтра",
+  "cancel_booking": "Отменить",
+  "no_upcoming_bookings": "Нет предстоящих бронирований",
+  "booking_cancelled": "Бронирование успешно отменено",
+  "confirm": "Подтвердить"
 };
 static const Map<String,dynamic> _pl = {
   "hello": "Cześć",
@@ -767,7 +794,16 @@ static const Map<String,dynamic> _pl = {
   "service_trainer_name": "Trener personalny",
   "service_trainer_desc": "Fitness i zdrowie",
   "service_guide_name": "Przewodnik turystyczny",
-  "service_guide_desc": "Prywatne wycieczki"
+  "service_guide_desc": "Prywatne wycieczki",
+  "upcoming_bookings": "Nadchodzące rezerwacje",
+  "my_bookings": "Moje rezerwacje",
+  "days_until": "dni do",
+  "today": "Dzisiaj",
+  "tomorrow": "Jutro",
+  "cancel_booking": "Anuluj",
+  "no_upcoming_bookings": "Brak nadchodzących rezerwacji",
+  "booking_cancelled": "Rezerwacja anulowana pomyślnie",
+  "confirm": "Potwierdź"
 };
 static const Map<String,dynamic> _en = {
   "hello": "Hello",
@@ -918,7 +954,16 @@ static const Map<String,dynamic> _en = {
   "service_trainer_name": "Personal Trainer",
   "service_trainer_desc": "Fitness & Wellness",
   "service_guide_name": "Tour Guide",
-  "service_guide_desc": "Private Tours"
+  "service_guide_desc": "Private Tours",
+  "upcoming_bookings": "Upcoming Bookings",
+  "my_bookings": "My Bookings",
+  "days_until": "days until",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "cancel_booking": "Cancel",
+  "no_upcoming_bookings": "No upcoming bookings",
+  "booking_cancelled": "Booking cancelled successfully",
+  "confirm": "Confirm"
 };
 static const Map<String,dynamic> _it = {
   "hello": "Ciao",
@@ -1069,7 +1114,16 @@ static const Map<String,dynamic> _it = {
   "service_trainer_name": "Personal Trainer",
   "service_trainer_desc": "Fitness e benessere",
   "service_guide_name": "Guida Turistica",
-  "service_guide_desc": "Tour privati"
+  "service_guide_desc": "Tour privati",
+  "upcoming_bookings": "Prenotazioni imminenti",
+  "my_bookings": "Le mie prenotazioni",
+  "days_until": "giorni a",
+  "today": "Oggi",
+  "tomorrow": "Domani",
+  "cancel_booking": "Annulla",
+  "no_upcoming_bookings": "Nessuna prenotazione imminente",
+  "booking_cancelled": "Prenotazione annullata con successo",
+  "confirm": "Conferma"
 };
 static const Map<String,dynamic> _fr = {
   "hello": "Bonjour",
@@ -1220,7 +1274,16 @@ static const Map<String,dynamic> _fr = {
   "service_trainer_name": "Entraîneur personnel",
   "service_trainer_desc": "Fitness et bien-être",
   "service_guide_name": "Guide touristique",
-  "service_guide_desc": "Visites privées"
+  "service_guide_desc": "Visites privées",
+  "upcoming_bookings": "Réservations à venir",
+  "my_bookings": "Mes réservations",
+  "days_until": "jours avant",
+  "today": "Aujourd'hui",
+  "tomorrow": "Demain",
+  "cancel_booking": "Annuler",
+  "no_upcoming_bookings": "Pas de réservations à venir",
+  "booking_cancelled": "Réservation annulée avec succès",
+  "confirm": "Confirmer"
 };
 static const Map<String,dynamic> _es = {
   "hello": "Hola",
@@ -1371,7 +1434,16 @@ static const Map<String,dynamic> _es = {
   "service_trainer_name": "Entrenador Personal",
   "service_trainer_desc": "Fitness y bienestar",
   "service_guide_name": "Guía Turístico",
-  "service_guide_desc": "Tours privados"
+  "service_guide_desc": "Tours privados",
+  "upcoming_bookings": "Próximas reservas",
+  "my_bookings": "Mis reservas",
+  "days_until": "días hasta",
+  "today": "Hoy",
+  "tomorrow": "Mañana",
+  "cancel_booking": "Cancelar",
+  "no_upcoming_bookings": "No hay reservas próximas",
+  "booking_cancelled": "Reserva cancelada con éxito",
+  "confirm": "Confirmar"
 };
 static const Map<String,dynamic> _ar = {
   "hello": "اهلا",
@@ -1515,7 +1587,16 @@ static const Map<String,dynamic> _ar = {
   "service_trainer_name": "مدرب شخصي",
   "service_trainer_desc": "لياقة بدنية وصحة",
   "service_guide_name": "مرشد سياحي",
-  "service_guide_desc": "جولات خاصة"
+  "service_guide_desc": "جولات خاصة",
+  "upcoming_bookings": "الحجوزات القادمة",
+  "my_bookings": "حجوزاتي",
+  "days_until": "أيام حتى",
+  "today": "اليوم",
+  "tomorrow": "غداً",
+  "cancel_booking": "إلغاء الحجز",
+  "no_upcoming_bookings": "لا توجد حجوزات قادمة",
+  "booking_cancelled": "تم إلغاء الحجز بنجاح",
+  "confirm": "تأكيد"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"zh": _zh, "ja": _ja, "de": _de, "ru": _ru, "pl": _pl, "en": _en, "it": _it, "fr": _fr, "es": _es, "ar": _ar};
 }

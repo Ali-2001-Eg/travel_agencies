@@ -147,5 +147,14 @@
   "service_trainer_name": "Персональный тренер",
   "service_trainer_desc": "Фитнес и здоровье",
   "service_guide_name": "Туристический гид",
-  "service_guide_desc": "Частные туры"
+  "service_guide_desc": "Частные туры",
+  "upcoming_bookings": "Предстоящие бронирования",
+  "my_bookings": "Мои бронирования",
+  "days_until": "дней до",
+  "today": "Сегодня",
+  "tomorrow": "Завтра",
+  "cancel_booking": "Отменить",
+  "no_upcoming_bookings": "Нет предстоящих бронирований",
+  "booking_cancelled": "Бронирование успешно отменено",
+  "confirm": "Подтвердить"
 }

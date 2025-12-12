@@ -147,5 +147,14 @@
   "service_trainer_name": "Personal Trainer",
   "service_trainer_desc": "Fitness & Wellness",
   "service_guide_name": "Tour Guide",
-  "service_guide_desc": "Private Tours"
+  "service_guide_desc": "Private Tours",
+  "upcoming_bookings": "Upcoming Bookings",
+  "my_bookings": "My Bookings",
+  "days_until": "days until",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "cancel_booking": "Cancel",
+  "no_upcoming_bookings": "No upcoming bookings",
+  "booking_cancelled": "Booking cancelled successfully",
+  "confirm": "Confirm"
 }

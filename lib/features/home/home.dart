@@ -17,14 +17,17 @@ import '../auth/auth.dart';
 import 'blocs/home_navigation_bloc.dart';
 import 'blocs/booking_dialog_cubit.dart';
 import 'blocs/service_request_cubit.dart';
+import 'blocs/bookings_bloc.dart';
 
 // Models
 part 'models/excursion_model.dart';
 part 'models/event_model.dart';
 part 'models/service_model.dart';
+part 'models/booking_model.dart';
 
 // Views
 part 'presentation/view/home_screen.dart';
+part 'presentation/view/bookings_screen.dart';
 
 // Widgets
 part 'presentation/widgets/home_header.dart';
@@ -39,3 +42,5 @@ part 'presentation/widgets/service_card.dart';
 part 'presentation/widgets/tab_navigation_bar.dart';
 part 'presentation/widgets/booking_dialog.dart';
 part 'presentation/widgets/service_request_dialog.dart';
+part 'presentation/widgets/upcoming_bookings_card.dart';
+part 'presentation/widgets/booking_reminder_badge.dart';

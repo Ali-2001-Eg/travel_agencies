@@ -147,5 +147,14 @@
   "service_trainer_name": "Personal Trainer",
   "service_trainer_desc": "Fitness & Wellness",
   "service_guide_name": "Reiseleiter",
-  "service_guide_desc": "Private Touren"
+  "service_guide_desc": "Private Touren",
+  "upcoming_bookings": "Bevorstehende Buchungen",
+  "my_bookings": "Meine Buchungen",
+  "days_until": "Tage bis",
+  "today": "Heute",
+  "tomorrow": "Morgen",
+  "cancel_booking": "Stornieren",
+  "no_upcoming_bookings": "Keine bevorstehenden Buchungen",
+  "booking_cancelled": "Buchung erfolgreich storniert",
+  "confirm": "Bestätigen"
 }

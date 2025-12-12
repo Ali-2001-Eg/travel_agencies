@@ -147,5 +147,14 @@
     "service_trainer_name": "私人教练",
     "service_trainer_desc": "健身与健康",
     "service_guide_name": "导游",
-    "service_guide_desc": "私人旅游"
+    "service_guide_desc": "私人旅游",
+    "upcoming_bookings": "即将到来的预订",
+    "my_bookings": "我的预订",
+    "days_until": "天直到",
+    "today": "今天",
+    "tomorrow": "明天",
+    "cancel_booking": "取消",
+    "no_upcoming_bookings": "没有即将到来的预订",
+    "booking_cancelled": "预订已成功取消",
+    "confirm": "确认"
 }

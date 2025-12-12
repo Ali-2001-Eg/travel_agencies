@@ -1,6 +1,6 @@
 part of 'home_navigation_bloc.dart';
 
-enum HomeTab { home, excursions, events, services, favorites }
+enum HomeTab { home, excursions, events, services, bookings, favorites }
 
 enum ExcursionCategory { all, snorkeling, diving, safari, cultural, adventure }
 

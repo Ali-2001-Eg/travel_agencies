@@ -152,5 +152,14 @@ abstract class  LocaleKeys {
   static const service_trainer_desc = 'service_trainer_desc';
   static const service_guide_name = 'service_guide_name';
   static const service_guide_desc = 'service_guide_desc';
+  static const upcoming_bookings = 'upcoming_bookings';
+  static const my_bookings = 'my_bookings';
+  static const days_until = 'days_until';
+  static const today = 'today';
+  static const tomorrow = 'tomorrow';
+  static const cancel_booking = 'cancel_booking';
+  static const no_upcoming_bookings = 'no_upcoming_bookings';
+  static const booking_cancelled = 'booking_cancelled';
+  static const confirm = 'confirm';
 
 }
