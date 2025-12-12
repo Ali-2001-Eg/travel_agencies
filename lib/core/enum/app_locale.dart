@@ -7,7 +7,9 @@ enum AppLocale {
   spanish('es', 'Español', '🇪🇸'),
   french('fr', 'Français', '🇫🇷'),
   italian('it', 'Italiano', '🇮🇹'),
-  russian('ru', 'Русский', '🇷🇺');
+
+  russian('ru', 'Русский', '🇷🇺'),
+  polish('pl', 'Polski', '🇵🇱');
 
   const AppLocale(this.code, this.name, this.flag);
 

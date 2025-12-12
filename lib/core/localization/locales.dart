@@ -8,6 +8,7 @@ abstract interface class Locales {
   static const Locale spanish = Locale('es');
   static const Locale italian = Locale('it');
   static const Locale russian = Locale('ru');
+  static const Locale polish = Locale('pl');
 
   /// List of all supported locales
   static const List<Locale> all = [
@@ -18,5 +19,6 @@ abstract interface class Locales {
     spanish,
     italian,
     russian,
+    polish,
   ];
 }

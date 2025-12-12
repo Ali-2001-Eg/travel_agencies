@@ -43,6 +43,8 @@ abstract interface class LocalizationService {
         return Locales.italian;
       case 'ru':
         return Locales.russian;
+      case 'pl':
+        return Locales.polish;
       case 'en':
       default:
         return Locales.english;
