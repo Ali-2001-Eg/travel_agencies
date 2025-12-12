@@ -273,13 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
               final service = services[index];
               return ServiceCardWidget(
                 service: service,
-                onRequest: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) =>
-                        ServiceRequestDialog(service: service),
-                  );
-                },
+                onRequest: () => _showServiceRequestSheet(context, service),
               );
             },
           ),
@@ -403,12 +397,7 @@ class _HomeScreenState extends State<HomeScreen> {
         final service = services[index];
         return ServiceCardWidget(
           service: service,
-          onRequest: () {
-            showDialog(
-              context: context,
-              builder: (context) => ServiceRequestDialog(service: service),
-            );
-          },
+          onRequest: () => _showServiceRequestSheet(context, service),
         );
       },
     );
@@ -561,6 +550,18 @@ class _HomeScreenState extends State<HomeScreen> {
         maxHeight: MediaQuery.of(context).size.height * 0.8,
       ),
       builder: (context) => BookingSheet(item: item, isEvent: isEvent),
+    );
+  }
+
+  void _showServiceRequestSheet(BuildContext context, ServiceModel service) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.8,
+      ),
+      builder: (context) => ServiceRequestSheet(service: service),
     );
   }
 
