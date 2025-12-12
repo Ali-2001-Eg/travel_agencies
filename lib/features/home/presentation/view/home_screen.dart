@@ -43,6 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           decoration: InputDecoration(
                             hintText: LocaleKeys.search_placeholder.tr(),
+                            hintStyle:AppTextTheme.headlineMedium.copyWith(
+                              color: Colors.grey,
+                            ) ,
                             prefixIcon: const Icon(Icons.search),
                             filled: true,
                             fillColor: context.isDarkMode
@@ -57,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               vertical: 16,
                             ),
                           ),
-                          style: TextStyle(
+                          style: AppTextTheme.headlineMedium.copyWith(
                             color: context.isDarkMode
                                 ? Colors.white
                                 : Colors.black87,
@@ -324,6 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     selectedColor: const Color(0xFF14B8A6),
                     labelStyle: TextStyle(
+                      fontSize: 20.sp,
                       color: isSelected ? Colors.white : null,
                     ),
                   ),

@@ -427,6 +427,8 @@ class ServiceRequestSheet extends StatelessWidget {
                                     color: context.isDarkMode
                                         ? Colors.white70
                                         : Colors.black54,
+
+                                    fontSize: 20.sp,
                                   ),
                                 ),
                               ),
@@ -463,9 +465,11 @@ class ServiceRequestSheet extends StatelessWidget {
                                     const SizedBox(width: 8),
                                     LocalizedLabel(
                                       text: LocaleKeys.submit_request,
-                                      style: const TextStyle(
+                                      style:  TextStyle(
                                         fontWeight: FontWeight.w600,
                                         color: Colors.white,
+
+                                        fontSize: 20.sp,
                                       ),
                                     ),
                                   ],

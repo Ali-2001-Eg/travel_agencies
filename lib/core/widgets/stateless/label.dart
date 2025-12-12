@@ -1,6 +1,5 @@
 part of '../widgets.dart';
 
-
 class Label extends StatelessWidget {
   final String text;
   final TextStyle? style;
@@ -38,10 +37,9 @@ class Label extends StatelessWidget {
         style: (style ?? AppTextTheme.bodyLarge).copyWith(
             decoration: decoration,
             color: color,
-            fontFamily: "Cairo",
             fontSize: fontSize?.spMax,
-            fontWeight: fontWeight,height: height
-        ),
+            fontWeight: fontWeight,
+            height: height),
         softWrap: true,
         textAlign: textAlign,
         overflow: overflow,
@@ -61,7 +59,8 @@ class Label extends StatelessWidget {
     );
   }
 }
-class LocalizedLabel extends Label{
+
+class LocalizedLabel extends Label {
   const LocalizedLabel({
     super.key,
     required super.text,
@@ -79,5 +78,4 @@ class LocalizedLabel extends Label{
   });
   @override
   String get text => super.text.tr();
-
 }

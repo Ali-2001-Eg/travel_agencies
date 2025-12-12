@@ -90,7 +90,7 @@ class BookingSheet extends StatelessWidget {
                           color: Colors.white.withValues(alpha: 0.9),
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.close, size: 20),
+                        child:  Icon(Icons.close, size: 20,color: HexColor.primaryColor,),
                       ),
                     ),
                   ),
@@ -467,6 +467,8 @@ class BookingSheet extends StatelessWidget {
                                     color: context.isDarkMode
                                         ? Colors.white70
                                         : Colors.black54,
+
+                                    fontSize: 20.sp,
                                   ),
                                 ),
                               ),
@@ -501,9 +503,10 @@ class BookingSheet extends StatelessWidget {
                                     const SizedBox(width: 8),
                                     LocalizedLabel(
                                       text: LocaleKeys.confirm_booking,
-                                      style: const TextStyle(
+                                      style:  TextStyle(
                                         fontWeight: FontWeight.w600,
                                         color: Colors.white,
+                                        fontSize: 20.sp,
                                       ),
                                     ),
                                   ],
