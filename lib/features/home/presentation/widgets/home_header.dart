@@ -65,7 +65,7 @@ class HomeHeader extends StatelessWidget {
                 },
                 icon: Icon(
                   Icons.logout,
-                  color: context.isDarkMode ? Colors.white : Colors.black87,
+                  color: HexColor.errorColor
                 ),
               ),
             ),

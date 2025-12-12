@@ -94,16 +94,16 @@ class TabNavigationBar extends StatelessWidget {
                     : (context.isDarkMode ? Colors.white60 : Colors.black54),
               ),
               const SizedBox(height: 4),
-              LocalizedLabel(
-                text: labelKey,
-                style: TextStyle(
-                  fontSize: 11,
-                  color: isActive
-                      ? Colors.white
-                      : (context.isDarkMode ? Colors.white60 : Colors.black54),
-                ),
-                maxLines: 1,
-              ),
+              // LocalizedLabel(
+              //   text: labelKey,
+              //   style: TextStyle(
+              //     fontSize: 11,
+              //     color: isActive
+              //         ? Colors.white
+              //         : (context.isDarkMode ? Colors.white60 : Colors.black54),
+              //   ),
+              //   maxLines: 1,
+              // ),
             ],
           ),
         ),
