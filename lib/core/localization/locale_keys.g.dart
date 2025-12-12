@@ -120,5 +120,37 @@ abstract class  LocaleKeys {
   static const christmas = 'christmas';
   static const new_year = 'new_year';
   static const select_time = 'select_time';
+  static const excursion_red_sea_name = 'excursion_red_sea_name';
+  static const excursion_red_sea_desc = 'excursion_red_sea_desc';
+  static const excursion_safari_name = 'excursion_safari_name';
+  static const excursion_safari_desc = 'excursion_safari_desc';
+  static const excursion_scuba_name = 'excursion_scuba_name';
+  static const excursion_scuba_desc = 'excursion_scuba_desc';
+  static const excursion_luxor_name = 'excursion_luxor_name';
+  static const excursion_luxor_desc = 'excursion_luxor_desc';
+  static const excursion_bedouin_name = 'excursion_bedouin_name';
+  static const excursion_bedouin_desc = 'excursion_bedouin_desc';
+  static const excursion_parasailing_name = 'excursion_parasailing_name';
+  static const excursion_parasailing_desc = 'excursion_parasailing_desc';
+  static const event_christmas_party_name = 'event_christmas_party_name';
+  static const event_christmas_party_desc = 'event_christmas_party_desc';
+  static const event_new_year_gala_name = 'event_new_year_gala_name';
+  static const event_new_year_gala_desc = 'event_new_year_gala_desc';
+  static const event_night_club_name = 'event_night_club_name';
+  static const event_night_club_desc = 'event_night_club_desc';
+  static const event_cultural_night_name = 'event_cultural_night_name';
+  static const event_cultural_night_desc = 'event_cultural_night_desc';
+  static const service_healthcare_name = 'service_healthcare_name';
+  static const service_healthcare_desc = 'service_healthcare_desc';
+  static const service_spa_name = 'service_spa_name';
+  static const service_spa_desc = 'service_spa_desc';
+  static const service_doctor_name = 'service_doctor_name';
+  static const service_doctor_desc = 'service_doctor_desc';
+  static const service_transfer_name = 'service_transfer_name';
+  static const service_transfer_desc = 'service_transfer_desc';
+  static const service_trainer_name = 'service_trainer_name';
+  static const service_trainer_desc = 'service_trainer_desc';
+  static const service_guide_name = 'service_guide_name';
+  static const service_guide_desc = 'service_guide_desc';
 
 }

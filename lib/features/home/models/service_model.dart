@@ -17,41 +17,41 @@ class ServiceModel {
 
   // Mock data
   static List<ServiceModel> getMockData() {
-    return const [
+    return [
       ServiceModel(
         id: 201,
-        name: 'Healthcare',
-        description: '24/7 Medical Support',
+        name: LocaleKeys.service_healthcare_name.tr(),
+        description: LocaleKeys.service_healthcare_desc.tr(),
         icon: '🏥',
       ),
       ServiceModel(
         id: 202,
-        name: 'Spa & Massage',
-        description: 'Relaxation Services',
+        name: LocaleKeys.service_spa_name.tr(),
+        description: LocaleKeys.service_spa_desc.tr(),
         icon: '💆',
       ),
       ServiceModel(
         id: 203,
-        name: 'Doctor Consultation',
-        description: 'Online & In-person',
+        name: LocaleKeys.service_doctor_name.tr(),
+        description: LocaleKeys.service_doctor_desc.tr(),
         icon: '👨‍⚕️',
       ),
       ServiceModel(
         id: 204,
-        name: 'Airport Transfer',
-        description: 'Private Transportation',
+        name: LocaleKeys.service_transfer_name.tr(),
+        description: LocaleKeys.service_transfer_desc.tr(),
         icon: '🚗',
       ),
       ServiceModel(
         id: 205,
-        name: 'Personal Trainer',
-        description: 'Fitness & Wellness',
+        name: LocaleKeys.service_trainer_name.tr(),
+        description: LocaleKeys.service_trainer_desc.tr(),
         icon: '💪',
       ),
       ServiceModel(
         id: 206,
-        name: 'Tour Guide',
-        description: 'Private Tours',
+        name: LocaleKeys.service_guide_name.tr(),
+        description: LocaleKeys.service_guide_desc.tr(),
         icon: '🗺️',
       ),
     ];

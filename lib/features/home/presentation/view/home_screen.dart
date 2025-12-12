@@ -242,13 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           .read<HomeNavigationBloc>()
                           .add(ToggleFavoriteEvent(excursion.id));
                     },
-                    onBook: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            BookingDialog(item: excursion, isEvent: false),
-                      );
-                    },
+                    onBook: () => _showBookingSheet(context, excursion, false),
                   ),
                 );
               },
@@ -353,13 +347,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       .read<HomeNavigationBloc>()
                       .add(ToggleFavoriteEvent(excursion.id));
                 },
-                onBook: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) =>
-                        BookingDialog(item: excursion, isEvent: false),
-                  );
-                },
+                onBook: () => _showBookingSheet(context, excursion, false),
               );
             },
           ),
@@ -393,12 +381,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 .read<HomeNavigationBloc>()
                 .add(ToggleFavoriteEvent(event.id));
           },
-          onBook: () {
-            showDialog(
-              context: context,
-              builder: (context) => BookingDialog(item: event, isEvent: true),
-            );
-          },
+          onBook: () => _showBookingSheet(context, event, true),
         );
       },
     );
@@ -493,13 +476,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           .read<HomeNavigationBloc>()
                           .add(ToggleFavoriteEvent(excursion.id));
                     },
-                    onBook: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            BookingDialog(item: excursion, isEvent: false),
-                      );
-                    },
+                    onBook: () => _showBookingSheet(context, excursion, false),
                   ),
                 )),
             Gaps.v(24),
@@ -523,13 +500,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           .read<HomeNavigationBloc>()
                           .add(ToggleFavoriteEvent(event.id));
                     },
-                    onBook: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            BookingDialog(item: event, isEvent: true),
-                      );
-                    },
+                    onBook: () => _showBookingSheet(context, event, true),
                   ),
                 )),
           ],
@@ -578,6 +549,18 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showBookingSheet(BuildContext context, dynamic item, bool isEvent) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.8,
+      ),
+      builder: (context) => BookingSheet(item: item, isEvent: isEvent),
     );
   }
 
