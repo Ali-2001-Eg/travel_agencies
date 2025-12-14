@@ -15,8 +15,12 @@ abstract class  LocaleKeys {
   static const or_continue_with_email = 'or_continue_with_email';
   static const email_address = 'email_address';
   static const email_placeholder = 'email_placeholder';
+  static const email_required = 'email_required';
+  static const email_invalid = 'email_invalid';
   static const password = 'password';
   static const password_placeholder = 'password_placeholder';
+  static const password_required = 'password_required';
+  static const password_length_error = 'password_length_error';
   static const remember_me = 'remember_me';
   static const forgot_password = 'forgot_password';
   static const login = 'login';
