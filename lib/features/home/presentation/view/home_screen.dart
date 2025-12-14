@@ -280,9 +280,10 @@ class _HomeScreenState extends State<HomeScreen> {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            // Responsive column count
-            crossAxisCount: context.responsive(3, 5),
-            childAspectRatio: 0.9,
+            // Responsive column count - fewer columns on tablet for bigger images
+            crossAxisCount: context.responsive(3, 4),
+            childAspectRatio: context.responsive(
+                0.9, 1.1), // Taller aspect ratio on tablet for bigger images
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
           ),
@@ -335,7 +336,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     selectedColor: const Color(0xFF14B8A6),
                     labelStyle: TextStyle(
-                      fontSize: 20.sp,
+                      fontSize: AppTextTheme.getResponsiveFontSize(20).sp,
                       color: isSelected ? Colors.white : null,
                     ),
                   ),
@@ -350,7 +351,8 @@ class _HomeScreenState extends State<HomeScreen> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               // Responsive column count
               crossAxisCount: context.responsive(1, 2),
-              childAspectRatio: 1.3,
+              childAspectRatio: context.responsive(
+                  1.3, 0.8), // Taller aspect ratio on tablet for bigger images
               crossAxisSpacing: context.responsive(0.0, 16.0),
               mainAxisSpacing: 16,
             ),
@@ -389,7 +391,8 @@ class _HomeScreenState extends State<HomeScreen> {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         // Responsive column count
         crossAxisCount: context.responsive(1, 2),
-        childAspectRatio: 1.4,
+        childAspectRatio: context.responsive(
+            1.4, 0.8), // Taller aspect ratio on tablet for bigger images
         crossAxisSpacing: context.responsive(0.0, 16.0),
         mainAxisSpacing: 16,
       ),
@@ -417,9 +420,10 @@ class _HomeScreenState extends State<HomeScreen> {
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(20),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        // Responsive column count
-        crossAxisCount: context.responsive(2, 4),
-        childAspectRatio: 0.85,
+        // Responsive column count - fewer columns on tablet for bigger images
+        crossAxisCount: context.responsive(2, 3),
+        childAspectRatio: context.responsive(
+            0.85, 1.0), // Taller aspect ratio on tablet for bigger images
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
       ),
@@ -498,7 +502,8 @@ class _HomeScreenState extends State<HomeScreen> {
             sliver: SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.responsive(1, 2),
-                childAspectRatio: 1.3,
+                childAspectRatio: context.responsive(1.3,
+                    1.5), // Taller aspect ratio on tablet for bigger images
                 crossAxisSpacing: context.responsive(0.0, 16.0),
                 mainAxisSpacing: 16,
               ),
@@ -544,7 +549,8 @@ class _HomeScreenState extends State<HomeScreen> {
             sliver: SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.responsive(1, 2),
-                childAspectRatio: 1.4,
+                childAspectRatio: context.responsive(1.4,
+                    1.6), // Taller aspect ratio on tablet for bigger images
                 crossAxisSpacing: context.responsive(0.0, 16.0),
                 mainAxisSpacing: 16,
               ),

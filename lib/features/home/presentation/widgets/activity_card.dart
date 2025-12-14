@@ -136,6 +136,7 @@ class ExcursionCard extends StatelessWidget {
                                 color: context.isDarkMode
                                     ? Colors.white
                                     : Colors.black87,
+                                
                               ),
                             ),
                             LocalizedLabel(
@@ -144,7 +145,7 @@ class ExcursionCard extends StatelessWidget {
                                 color: context.isDarkMode
                                     ? Colors.white60
                                     : Colors.black45,
-                                fontSize: 10,
+                                fontSize: context.responsive(12, 14),
                               ),
                             ),
                           ],

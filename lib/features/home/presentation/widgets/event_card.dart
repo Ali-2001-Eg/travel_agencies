@@ -85,7 +85,7 @@ class EventCardWidget extends StatelessWidget {
                               color: context.isDarkMode
                                   ? Colors.white60
                                   : Colors.black45,
-                              fontSize: 10,
+                              fontSize: context.responsive(12, 14),
                             ),
                           ),
                         ],
@@ -106,10 +106,10 @@ class EventCardWidget extends StatelessWidget {
                           ),
                           child: LocalizedLabel(
                             text: LocaleKeys.book_now,
-                            style: const TextStyle(
+                            style:  TextStyle(
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: context.responsive(14, 16),
                             ),
                           ),
                         ),
