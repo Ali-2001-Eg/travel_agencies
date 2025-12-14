@@ -92,7 +92,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           readOnly: widget.readOnly,
           maxLines: widget.maxLines,
           minLines: widget.minLines,
-          style: widget.textStyle ?? context.textTheme.bodyLarge,
+          style: widget.textStyle ?? context.textTheme.bodyLarge?.copyWith(color: context.isDarkMode?HexColor.white:HexColor.black),
           decoration: InputDecoration(
             hintText: widget.hintText?.tr(),
             prefixText: widget.prefixText,

@@ -77,7 +77,7 @@ class _LoginFormState extends State<LoginForm> {
                     text: LocaleKeys.remember_me,
                     style: context.textTheme.bodyMedium?.copyWith(
                       color:
-                          context.isDarkMode ? Colors.white70 : Colors.black87,
+                      context.isDarkMode ? Colors.white70 : Colors.black87,
                     ),
                   ),
                 ],
@@ -104,23 +104,37 @@ class _LoginFormState extends State<LoginForm> {
         SizedBox(
           width: double.infinity,
           height: 56,
-          child: ElevatedButton(
-            onPressed: () {
-              // Login logic - navigate to home
-              context.go(Routes.home);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF00BFA5),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-            child: LocalizedLabel(
-              text: LocaleKeys.login,
-              style: context.textTheme.bodyLarge?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+          child: BlocProvider(
+            create: (context) => getIt<LoginBloc>(),
+            child: BlocConsumer<LoginBloc, BaseState<void>>(
+              listener: (context, state) {
+                if(state.isSuccess){
+                  context.go(Routes.home);
+                }
+                if(state.isFailure){
+                  context.showTopSnackBar(message:  state.errorMessage!,type: SnackBarType.error);
+                }
+              },
+              builder: (context, state) {
+                return ElevatedButton(
+                  onPressed: () {
+                    context.read<LoginBloc>().add(LoginEvent(_emailController.text,_passwordController.text));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF00BFA5),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: LocalizedLabel(
+                    text: LocaleKeys.login,
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ),

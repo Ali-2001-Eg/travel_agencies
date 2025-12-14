@@ -1,8 +1,9 @@
 part of "../../auth.dart";
 
-abstract interface class LoginEvent extends Equatable {
+ interface class LoginEvent extends Equatable {
   final String email;
-  const LoginEvent(this.email);
+  final String password;
+  const LoginEvent(this.email, this.password);
   @override
-  List<Object?> get props => [email];
+  List<Object?> get props => [email,password];
 }

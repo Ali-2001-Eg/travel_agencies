@@ -65,3 +65,14 @@ class VerifyOTPFailure extends Failure {
 class BanFailure extends Failure {
   BanFailure({required String message}) : super(message);
 }
+
+class NotFoundFailure extends Failure {
+  NotFoundFailure({required String message}) : super(message);
+  @override toString(){
+    return message;
+  }
+}
+
+class SyncAppFailure extends Failure {
+  SyncAppFailure({required String message}) : super(message);
+}

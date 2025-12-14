@@ -1,8 +1,11 @@
 import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:travel_agencies/core/enum/snack_bar_enum.dart';
+import 'package:travel_agencies/core/service_locator/service_locator.dart';
 
 import '../../core/bloc/blocs.dart';
 import '../../core/enum/status.dart';

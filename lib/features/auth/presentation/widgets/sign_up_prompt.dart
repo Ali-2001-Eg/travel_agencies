@@ -6,7 +6,7 @@ class SignUpPrompt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      child: Wrap(
+      child: Row(
 
         // crossAxisAlignment: WrapCrossAlignment.start,
         children: [

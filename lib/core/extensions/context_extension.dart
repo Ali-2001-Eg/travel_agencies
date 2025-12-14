@@ -185,7 +185,7 @@ extension ContextExtensions on BuildContext {
 
   void showTopSnackBar({
     required String message,
-    SnackBarType type = SnackBarType.info,
+    SnackBarType type = SnackBarType.success,
     Duration duration = const Duration(seconds: 3),
   }) {
     final overlay = Overlay.of(this);
@@ -204,7 +204,7 @@ extension ContextExtensions on BuildContext {
         icon = CupertinoIcons.exclamationmark_octagon_fill;
         break;
       case SnackBarType.warning:
-        backgroundColor = Colors.orange;
+        backgroundColor = HexColor.secondaryColor;
         icon = CupertinoIcons.exclamationmark_triangle_fill;
         break;
       case SnackBarType.info:
@@ -220,18 +220,23 @@ extension ContextExtensions on BuildContext {
       reverseDuration: const Duration(milliseconds: 300),
     );
 
-    final curvedAnimation =
-        CurvedAnimation(parent: animationController, curve: Curves.easeOutBack);
+    final curvedAnimation = CurvedAnimation(
+      parent: animationController,
+      curve: Curves.easeOutBack,
+    );
 
     final overlayEntry = OverlayEntry(
       builder: (context) => AnimatedBuilder(
         animation: curvedAnimation,
         builder: (context, child) {
-          final slideOffset =
-              Tween<Offset>(begin: const Offset(0, -1.0), end: Offset.zero)
-                  .animate(curvedAnimation);
-          final opacity =
-              Tween<double>(begin: 0.0, end: 1.0).animate(curvedAnimation);
+          final slideOffset = Tween<Offset>(
+            begin: const Offset(0, -1.0),
+            end: Offset.zero,
+          ).animate(curvedAnimation);
+          final opacity = Tween<double>(
+            begin: 0.0,
+            end: 1.0,
+          ).animate(curvedAnimation);
 
           return Positioned(
             left: 16,
