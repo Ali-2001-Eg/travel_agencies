@@ -12,7 +12,7 @@ class LoginBloc extends Bloc<LoginEvent, BaseState<void>> {
     try{
       fcm = await FirebaseMessaging.instance.getToken() ?? "";
     }catch(e){
-      fcm = "";
+      fcm = "dummy";
     }
     final result = await _loginDataSource.login(event.phone,event.password,fcm);
     emit(result.fold(

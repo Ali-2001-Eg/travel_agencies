@@ -19,8 +19,8 @@ class SharedServiceLocator {
               'Cache-Control': 'no-cache',
               'Pragma': 'no-cache',
               'Accept-Language':
-                  navigatorKey.currentContext?.isArabic ?? true ? 'ar' : 'en',
-              'Authorization': 'Bearer $token',
+                  navigatorKey.currentContext?.locale.languageCode ?? 'en',
+              'Authorization': token == null ? null : 'Bearer $token',
             },
           ),
         )..interceptors.addAll([
@@ -36,6 +36,13 @@ class SharedServiceLocator {
                 request: true,
                 maxWidth: 90,
               ),
+            InterceptorsWrapper(
+              onRequest: (options, handler) {
+                options.headers['Accept-Language'] =
+                    navigatorKey.currentContext?.locale.languageCode ?? 'en';
+                return handler.next(options);
+              },
+            ),
           ]);
       },
     );

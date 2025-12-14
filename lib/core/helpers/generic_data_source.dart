@@ -90,9 +90,9 @@ class GenericDataSource {
   }) async {
     final result = await _apiConsumer.post(
       endpoint,
-      data: data,
-      queryParameters: queryParameters,
-      headers: headers,
+      data: data?..removeWhere((key, value) => value == null || value == ''),
+      queryParameters: queryParameters?..removeWhere((key, value) => value == null || value == ''),
+      headers: headers?..removeWhere((key, value) => value == null || value == ''),
     );
     return result.fold(
           (left) => Left(left),

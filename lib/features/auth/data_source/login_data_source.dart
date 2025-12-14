@@ -15,7 +15,7 @@ class LoginDataSourceImpl implements LoginDataSource {
     return _genericDataSource.postData(endpoint: Endpoints.login, data: {
       "phone": phone,
       "password": password,
-      "device_token": deviceToken
+      "fcm_token": deviceToken
     });
   }
 }
