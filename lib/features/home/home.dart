@@ -27,6 +27,13 @@ part 'models/booking_model.dart';
 
 // Views
 part 'presentation/view/home_screen.dart';
+part 'presentation/view/home_tab_body.dart';
+part 'presentation/view/home_tab_helpers.dart';
+part 'presentation/view/home_tab_home.dart';
+part 'presentation/view/home_tab_excursions.dart';
+part 'presentation/view/home_tab_events.dart';
+part 'presentation/view/home_tab_services.dart';
+part 'presentation/view/home_tab_favorites.dart';
 part 'presentation/view/bookings_screen.dart';
 
 // Widgets
