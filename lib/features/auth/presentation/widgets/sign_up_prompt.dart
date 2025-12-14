@@ -6,8 +6,9 @@ class SignUpPrompt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Wrap(
+
+        // crossAxisAlignment: WrapCrossAlignment.start,
         children: [
           LocalizedLabel(
             text: LocaleKeys.dont_have_account,

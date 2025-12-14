@@ -5,8 +5,8 @@ class LoginPrompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         LocalizedLabel(
           text: LocaleKeys.already_have_account,

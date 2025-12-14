@@ -50,6 +50,7 @@ part '../auth/presentation/widgets/login_form.dart';
 part '../auth/presentation/widgets/register_form.dart';
 part '../auth/presentation/widgets/login_card.dart';
 part '../auth/presentation/widgets/register_card.dart';
+part '../auth/presentation/widgets/auth_responsive_scaffold.dart';
 part '../auth/presentation/widgets/user_avatar_icon.dart';
 part '../auth/presentation/widgets/sign_up_prompt.dart';
 part '../auth/presentation/widgets/login_prompt.dart';
