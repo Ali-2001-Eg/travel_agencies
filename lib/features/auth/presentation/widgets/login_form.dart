@@ -9,13 +9,13 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _rememberMe = false;
 
   @override
   void dispose() {
-    _emailController.dispose();
+    _phoneController.dispose();
     _passwordController.dispose();
     formKey.currentState?.dispose();
     super.dispose();
@@ -27,28 +27,44 @@ class _LoginFormState extends State<LoginForm> {
       key: formKey,
       child: Column(
         children: [
-          // Email field
-          CustomTextField(
-            labelText: LocaleKeys.email_address,
-            hintText: LocaleKeys.email_placeholder,
-            controller: _emailController,
-            keyboardType: TextInputType.emailAddress,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return LocaleKeys.email_required.tr();
-              }
-              if (!isValidEmail(value)) {
-                return LocaleKeys.email_invalid.tr();
-              }
-              return null;
-            },
-            prefixIcon: Icon(
-              Icons.email_outlined,
-              color: context.isDarkMode ? Colors.white60 : Colors.black54,
+          // Phone Number field
+          Directionality(
+            textDirection: ui.TextDirection.ltr,
+            child: IntlPhoneField(
+              textAlign: TextAlign.center,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
+              style: context.textTheme.headlineMedium?.copyWith(color: context.isDarkMode? HexColor.white: Colors.black),
+              decoration: InputDecoration(
+
+                hintText: LocaleKeys.phone_number.tr(),
+                counterStyle: context.textTheme.titleSmall?.copyWith(color: Colors.grey),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(),
+                ),
+              ),
+              initialCountryCode: 'EG',
+              onChanged: (phone) {
+                _phoneController.text = phone.completeNumber;
+              },
+              onCountryChanged: (country) {
+                // Optionally handle country change
+              },
+              validator: (value) {
+                if (value == null || value.number.isEmpty) {
+                  return LocaleKeys.phone_number_required.tr();
+                }
+                try {
+                  if (!value.isValidNumber()) {
+                    return LocaleKeys.phone_number_invalid.tr();
+                  }
+                } catch (e) {
+                  return LocaleKeys.phone_number_invalid.tr();
+                }
+                return null;
+              },
             ),
-            fillColor: context.isDarkMode
-                ? const Color(0xFF3A3A4E)
-                : Colors.grey.shade50,
           ),
 
           Gaps.v18(),
@@ -147,7 +163,7 @@ class _LoginFormState extends State<LoginForm> {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         context.read<LoginBloc>().add(LoginEvent(
-                            _emailController.text, _passwordController.text));
+                            _phoneController.text, _passwordController.text));
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -171,10 +187,5 @@ class _LoginFormState extends State<LoginForm> {
         ],
       ),
     );
-  }
-
-  bool isValidEmail(String value) {
-    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    return emailRegex.hasMatch(value);
   }
 }

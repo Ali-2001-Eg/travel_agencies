@@ -13,6 +13,8 @@
   "email_placeholder": "you@example.com",
   "email_required": "E-mail requis",
   "email_invalid": "Adresse e-mail invalide",
+  "phone_number_required": "Numéro de téléphone requis",
+  "phone_number_invalid": "Numéro de téléphone invalide",
   "password": "Mot de passe",
   "password_placeholder": "••••••••",
   "password_required": "Mot de passe requis",

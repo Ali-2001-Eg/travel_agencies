@@ -13,6 +13,8 @@
   "email_placeholder": "you@example.com",
   "email_required": "البريد الإلكتروني مطلوب",
   "email_invalid": "البريد الإلكتروني غير صالح",
+  "phone_number_required": "رقم الهاتف مطلوب",
+  "phone_number_invalid": "رقم الهاتف غير صالح",
   "password": "كلمة المرور",
   "password_placeholder": "••••••••",
   "password_required": "كلمة المرور مطلوبة",

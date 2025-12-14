@@ -14,7 +14,7 @@ class LoginBloc extends Bloc<LoginEvent, BaseState<void>> {
     }catch(e){
       fcm = "";
     }
-    final result = await _loginDataSource.login(event.email,event.password,fcm);
+    final result = await _loginDataSource.login(event.phone,event.password,fcm);
     emit(result.fold(
       (failure) => state.copyWith(
           status: Status.failure,

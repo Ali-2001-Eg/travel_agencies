@@ -13,6 +13,8 @@
     "email_placeholder": "you@example.com",
     "email_required": "メールアドレスが必要です",
     "email_invalid": "無効なメールアドレス",
+    "phone_number_required": "電話番号が必要です",
+    "phone_number_invalid": "無効な電話番号",
     "password": "パスワード",
     "password_placeholder": "••••••••",
     "password_required": "パスワードが必要です",

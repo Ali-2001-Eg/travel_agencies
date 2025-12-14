@@ -13,6 +13,8 @@
   "email_placeholder": "you@example.com",
   "email_required": "Требуется электронная почта",
   "email_invalid": "Неверный адрес электронной почты",
+  "phone_number_required": "Требуется номер телефона",
+  "phone_number_invalid": "Неверный номер телефона",
   "password": "Пароль",
   "password_placeholder": "••••••••",
   "password_required": "Требуется пароль",

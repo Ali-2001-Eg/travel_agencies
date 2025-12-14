@@ -266,13 +266,9 @@ extension ContextExtensions on BuildContext {
                         Icon(icon, color: Colors.white),
                         const SizedBox(width: 10),
                         Expanded(
-                          child: Text(
-                            message,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
+                          child: Label(
+                           text: message,
+                           color: Colors.white,
                           ),
                         ),
                       ],

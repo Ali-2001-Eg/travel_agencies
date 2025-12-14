@@ -13,6 +13,8 @@
     "email_placeholder": "you@example.com",
     "email_required": "必须要有电子邮件",
     "email_invalid": "无效的电子邮件地址",
+    "phone_number_required": "必须要有电话号码",
+    "phone_number_invalid": "无效的电话号码",
     "password": "密码",
     "password_placeholder": "••••••••",
     "password_required": "必须要有密码",
