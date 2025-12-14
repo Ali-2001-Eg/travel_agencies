@@ -15,6 +15,7 @@
   "email_invalid": "Неверный адрес электронной почты",
   "phone_number_required": "Требуется номер телефона",
   "phone_number_invalid": "Неверный номер телефона",
+  "search_country": "Поиск страны",
   "password": "Пароль",
   "password_placeholder": "••••••••",
   "password_required": "Требуется пароль",

@@ -15,6 +15,7 @@
     "email_invalid": "無効なメールアドレス",
     "phone_number_required": "電話番号が必要です",
     "phone_number_invalid": "無効な電話番号",
+    "search_country": "国を検索",
     "password": "パスワード",
     "password_placeholder": "••••••••",
     "password_required": "パスワードが必要です",

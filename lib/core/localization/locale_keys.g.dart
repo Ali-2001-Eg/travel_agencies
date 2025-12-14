@@ -19,6 +19,7 @@ abstract class  LocaleKeys {
   static const email_invalid = 'email_invalid';
   static const phone_number_required = 'phone_number_required';
   static const phone_number_invalid = 'phone_number_invalid';
+  static const search_country = 'search_country';
   static const password = 'password';
   static const password_placeholder = 'password_placeholder';
   static const password_required = 'password_required';

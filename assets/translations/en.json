@@ -15,6 +15,7 @@
   "email_invalid": "Invalid email address",
   "phone_number_required": "Phone number is required",
   "phone_number_invalid": "Invalid phone number",
+  "search_country": "Search Country",
   "password": "Password",
   "password_placeholder": "••••••••",
   "password_required": "Password is required",

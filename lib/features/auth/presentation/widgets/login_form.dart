@@ -32,9 +32,49 @@ class _LoginFormState extends State<LoginForm> {
             textDirection: ui.TextDirection.ltr,
             child: IntlPhoneField(
               textAlign: TextAlign.center,
+              dropdownTextStyle: context.textTheme.headlineMedium?.copyWith(color: context.isDarkMode? HexColor.white: Colors.black),
               inputFormatters: [
                 FilteringTextInputFormatter.digitsOnly,
               ],
+              pickerDialogStyle:PickerDialogStyle(
+
+                countryCodeStyle: context.textTheme.headlineSmall?.copyWith(color: context.isDarkMode? HexColor.white: Colors.black),
+                searchFieldInputDecoration: InputDecoration(
+                  hintText: LocaleKeys.search_country.tr(),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  border:
+                      OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: context.colorScheme.outline.withValues(alpha: 0.3),
+                        ),
+                      ),
+                  enabledBorder:
+                      OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: context.colorScheme.outline.withValues(alpha: 0.3),
+                        ),
+                      ),
+                  focusedBorder:
+                      OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: context.colorScheme.primary,
+                          width: 2,
+                        ),
+                      ),
+                  errorBorder:
+                      OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: context.colorScheme.error,
+                        ),
+                      ),
+
+                )
+              ) ,
               style: context.textTheme.headlineMedium?.copyWith(color: context.isDarkMode? HexColor.white: Colors.black),
               decoration: InputDecoration(
 
