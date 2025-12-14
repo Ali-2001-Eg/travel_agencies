@@ -86,6 +86,7 @@ class GenericDataSource {
     required String endpoint,
     Map<String, dynamic>? data,
     Map<String, dynamic>? queryParameters,
+    T Function(Map<String, dynamic>)? fromJson,
     Map<String, dynamic>? headers,
   }) async {
     final result = await _apiConsumer.post(
@@ -94,29 +95,28 @@ class GenericDataSource {
       queryParameters: queryParameters?..removeWhere((key, value) => value == null || value == ''),
       headers: headers?..removeWhere((key, value) => value == null || value == ''),
     );
-    return result.fold(
-          (left) => Left(left),
-          (right) {
-        try {
-          if (T == Null) {
-            return Right(null as T);
-          } else if (T == String) {
-            logger('right: $right');
-            return Right(right['result'] ?? "" as T);
-          } else if (T == int) {
-            return Right(right['result'] ?? 0 as T);
-          } else {
-            return Right(null as T);
+    return result.fold((left) => Left(left), (right) {
+      try {
+        if (T == Null) {
+          return Right(null as T);
+        } else if (T == String) {
+          logger('right: $right');
+          return Right(right['result'] ?? "" as T);
+        } else if (T == UserToken) {
+          return Right(fromJson!(right["data"]) ?? "" as T);
+        } else {
+          if (fromJson != null) {
+            return Right(fromJson(right));
           }
-        } catch (e, stackTrace) {
-          loggerError(stackTrace);
-          loggerWarn(e.toString());
-          return Left(ParsingFailure(message: e.toString()));
+          return Right(null as T);
         }
-      },
-    );
+      } catch (e, stackTrace) {
+        loggerError(stackTrace);
+        loggerWarn(e.toString());
+        return Left(ParsingFailure(message: e.toString()));
+      }
+    });
   }
-
   Future<Either<Failure, T>> postFormData<T>({
     required String endpoint,
     Map<String, dynamic>? data,

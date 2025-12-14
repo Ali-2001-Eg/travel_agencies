@@ -4,5 +4,7 @@ abstract interface class DI{
   static Future<void> execute() async {
     await SharedServiceLocator.execute(getIt: getIt);
     await AuthServiceLocator.execute(getIt: getIt);
+    await HiveServiceLocator.execute(getIt: getIt);
+
   }
 }

@@ -11,6 +11,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
+import '../../features/auth/auth.dart';
 import '../bloc/blocs.dart';
 import '../enum/status.dart';
 import '../http/either.dart';
