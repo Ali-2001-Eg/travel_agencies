@@ -2,19 +2,20 @@ part of '../../auth.dart';
 
 class OtpForm extends StatefulWidget {
   final String phoneNumber;
-  const OtpForm({super.key, required this.phoneNumber});
+  final TextEditingController otpController ;
+
+  const OtpForm({super.key, required this.phoneNumber, required this.otpController});
 
   @override
   State<OtpForm> createState() => _OtpFormState();
 }
 
 class _OtpFormState extends State<OtpForm> {
-  final _otpController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    _otpController.dispose();
+    formKey.currentState?.dispose();
     super.dispose();
   }
 
@@ -45,10 +46,11 @@ class _OtpFormState extends State<OtpForm> {
                 }
                 return null;
               },
+              autovalidateMode: AutovalidateMode.disabled,
               mainAxisAlignment: MainAxisAlignment.center,
               separatorBuilder: (context, index) => Gaps.h25(),
               length: 4,
-              controller: _otpController,
+              controller: widget.otpController,
               obscureText: false,
               animationType: AnimationType.fade,
               inputFormatters: [
@@ -116,7 +118,7 @@ class _OtpFormState extends State<OtpForm> {
                       if (formKey.currentState!.validate()) {
                         // Verify Logic
                         context.read<VerifyOTPBloc>().add(VerifyOtpEvent(
-                            widget.phoneNumber, _otpController.text));
+                            widget.phoneNumber, widget.otpController.text));
                       }
                     },
                     style: ElevatedButton.styleFrom(

@@ -1,9 +1,20 @@
 part of '../../auth.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   final String phoneNumber;
   const OtpScreen({super.key, required this.phoneNumber});
 
+  @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  final _otpController = TextEditingController();
+  @override
+  void dispose(){
+    _otpController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +32,8 @@ class OtpScreen extends StatelessWidget {
             child: Column(
               children: [
                 OtpForm(
-                  phoneNumber: phoneNumber,
+                  otpController: _otpController,
+                  phoneNumber: widget.phoneNumber,
                 ),
               ],
             ),
