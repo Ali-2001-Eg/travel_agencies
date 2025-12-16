@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -63,4 +64,6 @@ part '../auth/presentation/widgets/auth_responsive_scaffold.dart';
 part '../auth/presentation/widgets/user_avatar_icon.dart';
 part '../auth/presentation/widgets/sign_up_prompt.dart';
 part '../auth/presentation/widgets/login_prompt.dart';
+part 'presentation/view/otp_screen.dart';
+part 'presentation/widgets/otp_form.dart';
 part 'models/user_token.dart';

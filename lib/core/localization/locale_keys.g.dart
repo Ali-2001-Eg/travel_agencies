@@ -20,6 +20,12 @@ abstract class  LocaleKeys {
   static const phone_number_required = 'phone_number_required';
   static const phone_number_invalid = 'phone_number_invalid';
   static const search_country = 'search_country';
+  static const otp_title = 'otp_title';
+  static const otp_subtitle = 'otp_subtitle';
+  static const verify = 'verify';
+  static const resend_code = 'resend_code';
+  static const didnt_receive_code = 'didnt_receive_code';
+  static const otp_invalid = 'otp_invalid';
   static const password = 'password';
   static const password_placeholder = 'password_placeholder';
   static const password_required = 'password_required';

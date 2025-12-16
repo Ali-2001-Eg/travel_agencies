@@ -14,6 +14,13 @@ abstract interface class AppRouter {
         builder: (context, state) => const RegisterScreen(),
       ),
       GoRoute(
+        path: Routes.otp,
+        builder: (context, state) {
+          final phoneNumber = state.extra as String;
+          return  OtpScreen(phoneNumber: phoneNumber,);
+        },
+      ),
+      GoRoute(
         path: Routes.home,
         builder: (context, state) => const HomeScreen(),
       ),

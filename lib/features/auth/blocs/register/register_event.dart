@@ -1,10 +1,20 @@
 part of "../../auth.dart";
-abstract interface class RegisterEvent extends Equatable{
+
+class RegisterEvent extends Equatable {
+  final String name;
   final String email;
-  const RegisterEvent(this.email);
+  final String phone;
+  final String password;
+  final String confirmPassword;
+
+  const RegisterEvent({
+    required this.name,
+    required this.email,
+    required this.phone,
+    required this.password,
+    required this.confirmPassword,
+  });
 
   @override
-  List<Object?> get props => [email];
-
-
+  List<Object?> get props => [name, email, phone, password, confirmPassword];
 }
