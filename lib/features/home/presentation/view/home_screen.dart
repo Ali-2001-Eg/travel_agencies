@@ -94,7 +94,7 @@ class _HomeTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-      buildWhen: (previous, current) => previous.activeTab != current.activeTab,
+      // buildWhen: (previous, current) => previous.activeTab != current.activeTab,
       builder: (context, state) {
         return TabNavigationBar(
           activeTab: state.activeTab,

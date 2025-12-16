@@ -4,7 +4,7 @@ class TabNavigationBar extends StatelessWidget {
   final HomeTab activeTab;
   final Function(HomeTab) onTabChanged;
 
-  const TabNavigationBar({
+   const TabNavigationBar({
     super.key,
     required this.activeTab,
     required this.onTabChanged,
@@ -17,13 +17,17 @@ class TabNavigationBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.isDarkMode ? const Color(0xFF2A2A3E) : Colors.white,
         borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: Colors.grey.shade300,
+          width: 1,
+        ),
         boxShadow: [
-          BoxShadow(
-            color:
-                Colors.black.withValues(alpha: context.isDarkMode ? 0.3 : 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
+          // BoxShadow(
+          //   color:
+          //       Colors.black.withValues(alpha: context.isDarkMode ? 0.3 : 0.1),
+          //   blurRadius: 10,
+          //   offset: const Offset(0, 2),
+          // ),
         ],
       ),
       child: Row(
