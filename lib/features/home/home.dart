@@ -4,12 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:travel_agencies/core/local_storage/local_storage.dart';
 import 'package:travel_agencies/core/theme/theme.dart';
 
 import '../../core/bloc/blocs.dart';
 import '../../core/enum/egyptian_city.dart';
 import '../../core/extensions/extensions.dart';
 import '../../core/localization/locale_keys.g.dart';
+import '../../core/router/router.dart';
 import '../../core/widgets/widgets.dart';
 import '../auth/auth.dart';
 

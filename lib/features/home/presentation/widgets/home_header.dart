@@ -61,12 +61,10 @@ class HomeHeader extends StatelessWidget {
               child: IconButton(
                 onPressed: () {
                   // Logout logic - navigate back to login
-                  context.go('/');
+                  HiveServiceImpl.instance.clearAll();
+                  context.go(Routes.login);
                 },
-                icon: Icon(
-                  Icons.logout,
-                  color: HexColor.errorColor
-                ),
+                icon: Icon(Icons.logout, color: HexColor.errorColor),
               ),
             ),
           ],
