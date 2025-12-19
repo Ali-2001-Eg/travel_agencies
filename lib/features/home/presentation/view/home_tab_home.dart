@@ -44,6 +44,32 @@ class _HomeTabView extends StatelessWidget {
           children: [
             Expanded(
               child: _QuickActionCard(
+                label: "Offers", // Using string as key fallback
+                icon: Icons.local_offer,
+                color: const Color(0xFFEF4444), // Red
+                onTap: () => context
+                    .read<HomeNavigationBloc>()
+                    .add(const ChangeTabEvent(HomeTab.offers)),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: _QuickActionCard(
+                label: LocaleKeys.my_bookings.tr(),
+                icon: Icons.notifications_active, // Icon from tab bar
+                color: const Color(0xFF3B82F6), // Blue
+                onTap: () => context
+                    .read<HomeNavigationBloc>()
+                    .add(const ChangeTabEvent(HomeTab.bookings)),
+              ),
+            ),
+          ],
+        ),
+        Gaps.v(12),
+        Row(
+          children: [
+            Expanded(
+              child: _QuickActionCard(
                 label: LocaleKeys.services.tr(),
                 icon: Icons.room_service,
                 color: const Color(0xFFA855F7),

@@ -4,7 +4,7 @@ class TabNavigationBar extends StatelessWidget {
   final HomeTab activeTab;
   final Function(HomeTab) onTabChanged;
 
-   const TabNavigationBar({
+  const TabNavigationBar({
     super.key,
     required this.activeTab,
     required this.onTabChanged,
@@ -67,6 +67,22 @@ class TabNavigationBar extends StatelessWidget {
             HomeTab.favorites,
             Icons.favorite,
             LocaleKeys.favorites,
+          ),
+          _buildTabButton(
+            context,
+            HomeTab.offers,
+            Icons.local_offer,
+            // Assuming LocaleKeys.offers exists, otherwise use string for now or better "Offers"
+            // Using "Offers" as label key effectively if no translation found,
+            // but the widget seems to take labelKey.
+            // The widget _buildTabButton uses the key as is? No, it takes labelKey.
+            // The commented out LocalizedLabel code suggests it was used.
+            // But currently it's just passing labelKey to nothing?
+            // Ah, line 107 in TabNavigationBar is commented out!
+            // " // LocalizedLabel(..."
+            // So the label is currently HIDDEN.
+            // I will just pass "offers" as key.
+            "offers",
           ),
         ],
       ),

@@ -20,6 +20,8 @@ class _HomeTabBody extends StatelessWidget {
             return const BookingsScreen();
           case HomeTab.favorites:
             return _FavoritesTabView(state: state);
+          case HomeTab.offers:
+            return const _OffersTabView();
         }
       },
     );

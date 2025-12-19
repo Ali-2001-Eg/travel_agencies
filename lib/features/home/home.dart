@@ -34,6 +34,7 @@ part 'presentation/view/home_tab_excursions.dart';
 part 'presentation/view/home_tab_events.dart';
 part 'presentation/view/home_tab_services.dart';
 part 'presentation/view/home_tab_favorites.dart';
+part 'presentation/view/home_tab_offers.dart';
 part 'presentation/view/bookings_screen.dart';
 
 // Widgets
