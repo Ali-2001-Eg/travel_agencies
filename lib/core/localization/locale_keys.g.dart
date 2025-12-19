@@ -174,5 +174,6 @@ abstract class  LocaleKeys {
   static const no_upcoming_bookings = 'no_upcoming_bookings';
   static const booking_cancelled = 'booking_cancelled';
   static const confirm = 'confirm';
+  static const offers = 'offers';
 
 }

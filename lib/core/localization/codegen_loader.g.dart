@@ -185,7 +185,8 @@ class CodegenLoader extends AssetLoader{
   "cancel_booking": "取消",
   "no_upcoming_bookings": "没有即将到来的预订",
   "booking_cancelled": "预订已成功取消",
-  "confirm": "确认"
+  "confirm": "确认",
+  "offers": "优惠"
 };
 static const Map<String,dynamic> _ja = {
   "hello": "こんにちは",
@@ -349,7 +350,8 @@ static const Map<String,dynamic> _ja = {
   "service_trainer_name": "パーソナルトレーナー",
   "service_trainer_desc": "フィットネス＆ウェルネス",
   "service_guide_name": "ツアーガイド",
-  "service_guide_desc": "プライベートツアー"
+  "service_guide_desc": "プライベートツアー",
+  "offers": "オファー"
 };
 static const Map<String,dynamic> _de = {
   "hello": "Hallo",
@@ -522,7 +524,8 @@ static const Map<String,dynamic> _de = {
   "cancel_booking": "Stornieren",
   "no_upcoming_bookings": "Keine bevorstehenden Buchungen",
   "booking_cancelled": "Buchung erfolgreich storniert",
-  "confirm": "Bestätigen"
+  "confirm": "Bestätigen",
+  "offers": "Angebote"
 };
 static const Map<String,dynamic> _ru = {
   "hello": "Привет",
@@ -695,7 +698,8 @@ static const Map<String,dynamic> _ru = {
   "cancel_booking": "Отменить",
   "no_upcoming_bookings": "Нет предстоящих бронирований",
   "booking_cancelled": "Бронирование успешно отменено",
-  "confirm": "Подтвердить"
+  "confirm": "Подтвердить",
+  "offers": "Предложения"
 };
 static const Map<String,dynamic> _pl = {
   "hello": "Cześć",
@@ -868,7 +872,8 @@ static const Map<String,dynamic> _pl = {
   "cancel_booking": "Anuluj",
   "no_upcoming_bookings": "Brak nadchodzących rezerwacji",
   "booking_cancelled": "Rezerwacja anulowana pomyślnie",
-  "confirm": "Potwierdź"
+  "confirm": "Potwierdź",
+  "offers": "Oferty"
 };
 static const Map<String,dynamic> _en = {
   "hello": "Hello",
@@ -1041,7 +1046,8 @@ static const Map<String,dynamic> _en = {
   "cancel_booking": "Cancel",
   "no_upcoming_bookings": "No upcoming bookings",
   "booking_cancelled": "Booking cancelled successfully",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "offers": "Offers"
 };
 static const Map<String,dynamic> _it = {
   "hello": "Ciao",
@@ -1214,7 +1220,8 @@ static const Map<String,dynamic> _it = {
   "cancel_booking": "Annulla",
   "no_upcoming_bookings": "Nessuna prenotazione imminente",
   "booking_cancelled": "Prenotazione annullata con successo",
-  "confirm": "Conferma"
+  "confirm": "Conferma",
+  "offers": "Offerte"
 };
 static const Map<String,dynamic> _fr = {
   "hello": "Bonjour",
@@ -1387,7 +1394,8 @@ static const Map<String,dynamic> _fr = {
   "cancel_booking": "Annuler",
   "no_upcoming_bookings": "Pas de réservations à venir",
   "booking_cancelled": "Réservation annulée avec succès",
-  "confirm": "Confirmer"
+  "confirm": "Confirmer",
+  "offers": "Offres"
 };
 static const Map<String,dynamic> _es = {
   "hello": "Hola",
@@ -1560,7 +1568,8 @@ static const Map<String,dynamic> _es = {
   "cancel_booking": "Cancelar",
   "no_upcoming_bookings": "No hay reservas próximas",
   "booking_cancelled": "Reserva cancelada con éxito",
-  "confirm": "Confirmar"
+  "confirm": "Confirmar",
+  "offers": "Ofertas"
 };
 static const Map<String,dynamic> _ar = {
   "hello": "اهلا",
@@ -1726,7 +1735,8 @@ static const Map<String,dynamic> _ar = {
   "cancel_booking": "إلغاء الحجز",
   "no_upcoming_bookings": "لا توجد حجوزات قادمة",
   "booking_cancelled": "تم إلغاء الحجز بنجاح",
-  "confirm": "تأكيد"
+  "confirm": "تأكيد",
+  "offers": "العروض"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"zh": _zh, "ja": _ja, "de": _de, "ru": _ru, "pl": _pl, "en": _en, "it": _it, "fr": _fr, "es": _es, "ar": _ar};
 }

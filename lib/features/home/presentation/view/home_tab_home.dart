@@ -44,7 +44,7 @@ class _HomeTabView extends StatelessWidget {
           children: [
             Expanded(
               child: _QuickActionCard(
-                label: "Offers", // Using string as key fallback
+                label: LocaleKeys.offers.tr(),
                 icon: Icons.local_offer,
                 color: const Color(0xFFEF4444), // Red
                 onTap: () => context
