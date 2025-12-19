@@ -7,6 +7,10 @@ abstract interface class AppRouter {
     routes: [
       GoRoute(
         path: Routes.initial,
+        builder: (context, state) => const SplashScreen(),
+      ),
+      GoRoute(
+        path: Routes.login,
         builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
@@ -17,7 +21,9 @@ abstract interface class AppRouter {
         path: Routes.otp,
         builder: (context, state) {
           final phoneNumber = state.extra as String;
-          return  OtpScreen(phoneNumber: phoneNumber,);
+          return OtpScreen(
+            phoneNumber: phoneNumber,
+          );
         },
       ),
       GoRoute(

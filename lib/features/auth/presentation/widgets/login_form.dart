@@ -197,7 +197,7 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 builder: (context, state) {
                   if (state.isLoading) {
-                    return CircularProgressIndicator.adaptive();
+                    return Center(child: CircularProgressIndicator.adaptive());
                   }
                   return ElevatedButton(
                     onPressed: () {
