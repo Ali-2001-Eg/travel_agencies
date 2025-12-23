@@ -40,6 +40,7 @@ class _HomeScaffold extends StatelessWidget {
               SliverPersistentHeader(
                 pinned: true,
                 delegate: _StickyTabBarDelegate(
+                  isDarkMode: context.isDarkMode,
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: _HomeTabBar(),
@@ -113,8 +114,12 @@ Color _homeBackgroundColor(BuildContext context) {
 
 class _StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   final Widget child;
+  final bool isDarkMode;
 
-  _StickyTabBarDelegate({required this.child});
+  _StickyTabBarDelegate({
+    required this.child,
+    required this.isDarkMode,
+  });
 
   @override
   Widget build(
@@ -135,6 +140,6 @@ class _StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
     if (oldDelegate is! _StickyTabBarDelegate) return true;
-    return oldDelegate.child != child;
+    return oldDelegate.child != child || oldDelegate.isDarkMode != isDarkMode;
   }
 }
