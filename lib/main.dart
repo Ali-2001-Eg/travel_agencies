@@ -72,14 +72,22 @@ class MyApp extends StatelessWidget {
               )..add(const LoadUpcomingBookingsEvent()),
             ),
           ],
-          child: BlocListener<LocaleBloc, EnumState<AppLocale>>(
-            listener: (context, state) {
-              context.setLocale(state.selected.locale);
+          child: Builder(
+            builder: (context) {
+              // Sync LocaleBloc with initial locale from EasyLocalization
+              final initialLocale = AppLocale.fromLocale(context.locale);
+              context.read<LocaleBloc>().syncLocale(initialLocale);
+
+              return BlocListener<LocaleBloc, EnumState<AppLocale>>(
+                listener: (context, state) {
+                  context.setLocale(state.selected.locale);
+                },
+                child: AppRouter.getRootApp(
+                  context: context,
+                  scaffoldMessengerKey: scaffoldMessengerKey,
+                ),
+              );
             },
-            child: AppRouter.getRootApp(
-              context: context,
-              scaffoldMessengerKey: scaffoldMessengerKey,
-            ),
           ),
         );
       },

@@ -20,4 +20,8 @@ class LocaleBloc extends EnumBloc<AppLocale> {
   void changeLocale(AppLocale locale) {
     add(SelectEnumValue(locale));
   }
+
+  void syncLocale(AppLocale locale) {
+    add(SelectEnumValue(locale));
+  }
 }

@@ -7,17 +7,9 @@ class ThemeToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, themeState) {
-        // Determine the correct icon based on current theme mode
-        IconData themeIcon;
-        if (themeState.themeMode == ThemeMode.system) {
-          // For system mode, check actual brightness
-          themeIcon = context.isDarkMode ? Icons.light_mode : Icons.dark_mode;
-        } else {
-          // For explicit light/dark mode
-          themeIcon = themeState.themeMode == ThemeMode.light
-              ? Icons.dark_mode
-              : Icons.light_mode;
-        }
+        // Show the icon for the mode we will switch TO
+        final themeIcon =
+            context.isDarkMode ? Icons.light_mode : Icons.dark_mode;
 
         return Container(
           decoration: BoxDecoration(
@@ -38,16 +30,14 @@ class ThemeToggleButton extends StatelessWidget {
           child: IconButton(
             onPressed: () {
               ThemeMode newThemeMode;
-              switch (themeState.themeMode) {
-                case ThemeMode.light:
-                  newThemeMode = ThemeMode.dark;
-                  break;
-                case ThemeMode.dark:
-                  newThemeMode = ThemeMode.system;
-                  break;
-                case ThemeMode.system:
-                  newThemeMode = ThemeMode.light;
-                  break;
+              if (themeState.themeMode == ThemeMode.light) {
+                newThemeMode = ThemeMode.dark;
+              } else if (themeState.themeMode == ThemeMode.dark) {
+                newThemeMode = ThemeMode.light;
+              } else {
+                // If in System mode, toggle to the opposite of current brightness
+                newThemeMode =
+                    context.isDarkMode ? ThemeMode.light : ThemeMode.dark;
               }
               context.read<ThemeBloc>().add(ThemeChanged(newThemeMode));
             },

@@ -40,7 +40,7 @@ class CityDropdown extends StatelessWidget {
                         value: state.selectedCity,
                         isExpanded: true,
                         hint: LocalizedLabel(
-                          text: LocaleKeys.select_city.tr(),
+                          text: LocaleKeys.select_city,
                           style: context.textTheme.bodyMedium?.copyWith(
                             color: context.isDarkMode
                                 ? Colors.white70
@@ -65,7 +65,7 @@ class CityDropdown extends StatelessWidget {
                           return DropdownMenuItem<CityModel>(
                             value: city,
                             child: Text(
-                              city.name.tr(), // Use tr() for localization
+                              city.name,
                               style: context.textTheme.bodyMedium?.copyWith(
                                 color: context.isDarkMode
                                     ? Colors.white
