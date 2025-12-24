@@ -169,5 +169,11 @@
   "cancel_booking": "Stornieren",
   "no_upcoming_bookings": "Keine bevorstehenden Buchungen",
   "booking_cancelled": "Buchung erfolgreich storniert",
-  "confirm": "Bestätigen"
-,"offers": "Angebote"}
+  "confirm": "Bestätigen",
+  "offers": "Angebote",
+  "real_estate": "Immobilien",
+  "shaleeh": "Chalet",
+  "studio": "Studio",
+  "department": "Wohnung",
+  "villa": "Villa"
+}

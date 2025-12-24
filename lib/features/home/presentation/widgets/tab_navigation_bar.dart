@@ -40,6 +40,12 @@ class TabNavigationBar extends StatelessWidget {
           ),
           _buildTabButton(
             context,
+            HomeTab.realEstate,
+            Icons.home_work,
+            "real_estate",
+          ),
+          _buildTabButton(
+            context,
             HomeTab.excursions,
             Icons.explore,
             LocaleKeys.excursions,

@@ -169,5 +169,11 @@
   "cancel_booking": "Отменить",
   "no_upcoming_bookings": "Нет предстоящих бронирований",
   "booking_cancelled": "Бронирование успешно отменено",
-  "confirm": "Подтвердить"
-,"offers": "Предложения"}
+  "confirm": "Подтвердить",
+  "offers": "Предложения",
+  "real_estate": "Недвижимость",
+  "shaleeh": "Шале",
+  "studio": "Студия",
+  "department": "Квартира",
+  "villa": "Вилла"
+}

@@ -175,5 +175,10 @@ abstract class  LocaleKeys {
   static const booking_cancelled = 'booking_cancelled';
   static const confirm = 'confirm';
   static const offers = 'offers';
+  static const real_estate = 'real_estate';
+  static const shaleeh = 'shaleeh';
+  static const studio = 'studio';
+  static const department = 'department';
+  static const villa = 'villa';
 
 }

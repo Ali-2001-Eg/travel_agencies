@@ -81,6 +81,21 @@ class _HomeTabView extends StatelessWidget {
             const SizedBox(width: 12),
             Expanded(
               child: _QuickActionCard(
+                label: "real_estate".tr(),
+                icon: Icons.home_work,
+                color: const Color(0xFFFACC30), // Yellow/Amber
+                onTap: () => context
+                    .read<HomeNavigationBloc>()
+                    .add(const ChangeTabEvent(HomeTab.realEstate)),
+              ),
+            ),
+          ],
+        ),
+        Gaps.v(12),
+        Row(
+          children: [
+            Expanded(
+              child: _QuickActionCard(
                 label: LocaleKeys.scan_qr_code.tr(),
                 icon: Icons.qr_code_scanner,
                 color: const Color(0xFFEC4899),

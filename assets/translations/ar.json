@@ -162,5 +162,11 @@
   "cancel_booking": "إلغاء الحجز",
   "no_upcoming_bookings": "لا توجد حجوزات قادمة",
   "booking_cancelled": "تم إلغاء الحجز بنجاح",
-  "confirm": "تأكيد"
-,"offers": "العروض"}
+  "confirm": "تأكيد",
+  "offers": "العروض",
+  "real_estate": "العقارات",
+  "shaleeh": "شاليهات",
+  "studio": "ستوديو",
+  "department": "شقق",
+  "villa": "فيلات"
+}

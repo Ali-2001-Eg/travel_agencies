@@ -169,5 +169,11 @@
   "cancel_booking": "Cancelar",
   "no_upcoming_bookings": "No hay reservas próximas",
   "booking_cancelled": "Reserva cancelada con éxito",
-  "confirm": "Confirmar"
-,"offers": "Ofertas"}
+  "confirm": "Confirmar",
+  "offers": "Ofertas",
+  "real_estate": "Bienes Raíces",
+  "shaleeh": "Chalet",
+  "studio": "Estudio",
+  "department": "Departamento",
+  "villa": "Villa"
+}

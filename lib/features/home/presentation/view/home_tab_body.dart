@@ -10,6 +10,8 @@ class _HomeTabBody extends StatelessWidget {
         switch (state.activeTab) {
           case HomeTab.home:
             return _HomeTabView(state: state);
+          case HomeTab.realEstate:
+            return const RealEstateTabView();
           case HomeTab.excursions:
             return _ExcursionsTabView(state: state);
           case HomeTab.events:

@@ -160,5 +160,11 @@
     "service_trainer_name": "パーソナルトレーナー",
     "service_trainer_desc": "フィットネス＆ウェルネス",
     "service_guide_name": "ツアーガイド",
-    "service_guide_desc": "プライベートツアー"
-,"offers": "オファー"}
+    "service_guide_desc": "プライベートツアー",
+    "offers": "オファー",
+    "real_estate": "不動産",
+    "shaleeh": "シャレー",
+    "studio": "スタジオ",
+    "department": "マンション",
+    "villa": "ヴィラ"
+}

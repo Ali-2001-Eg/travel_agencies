@@ -169,5 +169,11 @@
     "cancel_booking": "取消",
     "no_upcoming_bookings": "没有即将到来的预订",
     "booking_cancelled": "预订已成功取消",
-    "confirm": "确认"
-,"offers": "优惠"}
+    "confirm": "确认",
+    "offers": "优惠",
+    "real_estate": "房地产",
+    "shaleeh": "小木屋",
+    "studio": "单间公寓",
+    "department": "公寓",
+    "villa": "别墅"
+}

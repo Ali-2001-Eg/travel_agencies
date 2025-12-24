@@ -20,6 +20,7 @@ import 'blocs/home_navigation_bloc.dart';
 import 'blocs/booking_dialog_cubit.dart';
 import 'blocs/service_request_cubit.dart';
 import 'blocs/bookings_bloc.dart';
+import 'blocs/real_estate_bloc.dart';
 
 // Models
 part 'models/excursion_model.dart';
@@ -37,6 +38,7 @@ part 'presentation/view/home_tab_events.dart';
 part 'presentation/view/home_tab_services.dart';
 part 'presentation/view/home_tab_favorites.dart';
 part 'presentation/view/home_tab_offers.dart';
+part 'presentation/view/home_tab_real_estate.dart';
 part 'presentation/view/bookings_screen.dart';
 
 // Widgets

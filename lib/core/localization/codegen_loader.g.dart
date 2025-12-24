@@ -186,7 +186,12 @@ class CodegenLoader extends AssetLoader{
   "no_upcoming_bookings": "没有即将到来的预订",
   "booking_cancelled": "预订已成功取消",
   "confirm": "确认",
-  "offers": "优惠"
+  "offers": "优惠",
+  "real_estate": "房地产",
+  "shaleeh": "小木屋",
+  "studio": "单间公寓",
+  "department": "公寓",
+  "villa": "别墅"
 };
 static const Map<String,dynamic> _ja = {
   "hello": "こんにちは",
@@ -351,7 +356,12 @@ static const Map<String,dynamic> _ja = {
   "service_trainer_desc": "フィットネス＆ウェルネス",
   "service_guide_name": "ツアーガイド",
   "service_guide_desc": "プライベートツアー",
-  "offers": "オファー"
+  "offers": "オファー",
+  "real_estate": "不動産",
+  "shaleeh": "シャレー",
+  "studio": "スタジオ",
+  "department": "マンション",
+  "villa": "ヴィラ"
 };
 static const Map<String,dynamic> _de = {
   "hello": "Hallo",
@@ -525,7 +535,12 @@ static const Map<String,dynamic> _de = {
   "no_upcoming_bookings": "Keine bevorstehenden Buchungen",
   "booking_cancelled": "Buchung erfolgreich storniert",
   "confirm": "Bestätigen",
-  "offers": "Angebote"
+  "offers": "Angebote",
+  "real_estate": "Immobilien",
+  "shaleeh": "Chalet",
+  "studio": "Studio",
+  "department": "Wohnung",
+  "villa": "Villa"
 };
 static const Map<String,dynamic> _ru = {
   "hello": "Привет",
@@ -699,7 +714,12 @@ static const Map<String,dynamic> _ru = {
   "no_upcoming_bookings": "Нет предстоящих бронирований",
   "booking_cancelled": "Бронирование успешно отменено",
   "confirm": "Подтвердить",
-  "offers": "Предложения"
+  "offers": "Предложения",
+  "real_estate": "Недвижимость",
+  "shaleeh": "Шале",
+  "studio": "Студия",
+  "department": "Квартира",
+  "villa": "Вилла"
 };
 static const Map<String,dynamic> _pl = {
   "hello": "Cześć",
@@ -873,7 +893,12 @@ static const Map<String,dynamic> _pl = {
   "no_upcoming_bookings": "Brak nadchodzących rezerwacji",
   "booking_cancelled": "Rezerwacja anulowana pomyślnie",
   "confirm": "Potwierdź",
-  "offers": "Oferty"
+  "offers": "Oferty",
+  "real_estate": "Nieruchomości",
+  "shaleeh": "Domek",
+  "studio": "Studio",
+  "department": "Mieszkanie",
+  "villa": "Willa"
 };
 static const Map<String,dynamic> _en = {
   "hello": "Hello",
@@ -1047,7 +1072,12 @@ static const Map<String,dynamic> _en = {
   "no_upcoming_bookings": "No upcoming bookings",
   "booking_cancelled": "Booking cancelled successfully",
   "confirm": "Confirm",
-  "offers": "Offers"
+  "offers": "Offers",
+  "real_estate": "Real Estate",
+  "shaleeh": "Shaleeh",
+  "studio": "Studio",
+  "department": "Department",
+  "villa": "Villa"
 };
 static const Map<String,dynamic> _it = {
   "hello": "Ciao",
@@ -1221,7 +1251,12 @@ static const Map<String,dynamic> _it = {
   "no_upcoming_bookings": "Nessuna prenotazione imminente",
   "booking_cancelled": "Prenotazione annullata con successo",
   "confirm": "Conferma",
-  "offers": "Offerte"
+  "offers": "Offerte",
+  "real_estate": "Immobiliare",
+  "shaleeh": "Chalet",
+  "studio": "Studio",
+  "department": "Appartamento",
+  "villa": "Villa"
 };
 static const Map<String,dynamic> _fr = {
   "hello": "Bonjour",
@@ -1395,7 +1430,12 @@ static const Map<String,dynamic> _fr = {
   "no_upcoming_bookings": "Pas de réservations à venir",
   "booking_cancelled": "Réservation annulée avec succès",
   "confirm": "Confirmer",
-  "offers": "Offres"
+  "offers": "Offres",
+  "real_estate": "Immobilier",
+  "shaleeh": "Chalet",
+  "studio": "Studio",
+  "department": "Appartement",
+  "villa": "Villa"
 };
 static const Map<String,dynamic> _es = {
   "hello": "Hola",
@@ -1569,7 +1609,12 @@ static const Map<String,dynamic> _es = {
   "no_upcoming_bookings": "No hay reservas próximas",
   "booking_cancelled": "Reserva cancelada con éxito",
   "confirm": "Confirmar",
-  "offers": "Ofertas"
+  "offers": "Ofertas",
+  "real_estate": "Bienes Raíces",
+  "shaleeh": "Chalet",
+  "studio": "Estudio",
+  "department": "Departamento",
+  "villa": "Villa"
 };
 static const Map<String,dynamic> _ar = {
   "hello": "اهلا",
@@ -1736,7 +1781,12 @@ static const Map<String,dynamic> _ar = {
   "no_upcoming_bookings": "لا توجد حجوزات قادمة",
   "booking_cancelled": "تم إلغاء الحجز بنجاح",
   "confirm": "تأكيد",
-  "offers": "العروض"
+  "offers": "العروض",
+  "real_estate": "العقارات",
+  "shaleeh": "شاليهات",
+  "studio": "ستوديو",
+  "department": "شقق",
+  "villa": "فيلات"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"zh": _zh, "ja": _ja, "de": _de, "ru": _ru, "pl": _pl, "en": _en, "it": _it, "fr": _fr, "es": _es, "ar": _ar};
 }
