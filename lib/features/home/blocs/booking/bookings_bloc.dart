@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../data/cache/bookings_cache.dart';
-import '../home.dart';
+import '../../data/cache/bookings_cache.dart';
+import '../../home.dart';
 
 // Events
 abstract class BookingsEvent extends Equatable {

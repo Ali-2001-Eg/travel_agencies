@@ -5,71 +5,82 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        // App logo
-        Container(
-          width: 50,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            gradient: const LinearGradient(
-              colors: [
-                Color(0xFFFF6B35),
-                Color(0xFFFFB347),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: const Icon(
-            Icons.location_on,
-            color: Colors.white,
-            size: 28,
-          ),
-        ),
-
-        // Controls (language, theme, logout)
-        Row(
-          children: [
-            // Language dropdown
-            const LocaleDropdown(),
-            Gaps.h10(),
-
-            // Theme toggle
-            const ThemeToggleButton(),
-            Gaps.h10(),
-
-            // Logout button
-            Container(
-              decoration: BoxDecoration(
-                color: context.isDarkMode
-                    ? Colors.white.withValues(alpha: 0.1)
-                    : Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: context.isDarkMode
-                    ? null
-                    : [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.05),
-                          blurRadius: 10,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
+    return FittedBox(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // App logo and City selection
+          Row(
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xFFFF6B35),
+                      Color(0xFFFFB347),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: const Icon(
+                  Icons.location_on,
+                  color: Colors.white,
+                  size: 28,
+                ),
               ),
-              child: IconButton(
-                onPressed: () {
-                  // Logout logic - navigate back to login
-                  HiveServiceImpl.instance.clearAll();
-                  context.go(Routes.login);
-                },
-                icon: Icon(Icons.logout, color: HexColor.errorColor),
+              Gaps.h12(),
+               SizedBox(
+                width: .4.sw,
+                child: CityDropdown(),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+      
+          // Controls (language, theme, logout)
+          Row(
+            children: [
+              // Language dropdown
+              const LocaleDropdown(),
+              Gaps.h10(),
+      
+              // Theme toggle
+              const ThemeToggleButton(),
+              Gaps.h10(),
+      
+              // Logout button
+              Container(
+                decoration: BoxDecoration(
+                  color: context.isDarkMode
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: context.isDarkMode
+                      ? null
+                      : [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 10,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                ),
+                child: IconButton(
+                  onPressed: () {
+                    // Logout logic - navigate back to login
+                    HiveServiceImpl.instance.clearAll();
+                    context.go(Routes.login);
+                  },
+                  icon: Icon(Icons.logout, color: HexColor.errorColor),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

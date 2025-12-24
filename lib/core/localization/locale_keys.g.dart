@@ -180,5 +180,6 @@ abstract class  LocaleKeys {
   static const studio = 'studio';
   static const department = 'department';
   static const villa = 'villa';
+  static const select_city = 'select_city';
 
 }

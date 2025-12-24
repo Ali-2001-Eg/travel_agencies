@@ -30,12 +30,12 @@ class GenericDataSource {
 
           if (paginationParams != null) {
             final items =
-            (right['result'] as List).map((e) => fromJson(e)).toList();
+            (right['data'] as List).map((e) => fromJson(e)).toList();
 
             return Right(items);
           }
           final items =
-          (right['result'] as List).map((e) => fromJson(e)).toList();
+          (right['data'] as List).map((e) => fromJson(e)).toList();
           return Right(items);
         } catch (e, stackTrace) {
           loggerError(stackTrace);
@@ -72,7 +72,7 @@ class GenericDataSource {
             logger('right: ${right["result"]}');
             return Right(right["result"] as T);
           }
-          return Right(fromJson!(right['result']));
+          return Right(fromJson!(right['data']));
         } catch (e, stackTrace) {
           loggerError(stackTrace);
           loggerWarn(e.toString());
@@ -101,7 +101,7 @@ class GenericDataSource {
           return Right(null as T);
         } else if (T == String) {
           logger('right: $right');
-          return Right(right['result'] ?? "" as T);
+          return Right(right['data'] ?? "" as T);
         } else if (T == UserToken) {
           return Right(fromJson!(right["data"]) ?? "" as T);
         } else {
@@ -142,7 +142,7 @@ class GenericDataSource {
           if (T == Null) {
             return Right(null as T);
           } else if (T == int) {
-            return Right((right['result'] ?? 0) as T);
+            return Right((right['data'] ?? 0) as T);
           } else if (T == String) {
             logger('right: $right');
             return Right((right['redirect_url'] ?? "") as T);

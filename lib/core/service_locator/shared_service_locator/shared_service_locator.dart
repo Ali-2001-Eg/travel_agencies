@@ -62,8 +62,11 @@ class SharedServiceLocator {
     // Locale services
     getIt.registerLazySingleton<LocaleBloc>(() => LocaleBloc());
 
+
+
     // City services
-    getIt.registerLazySingleton<CityBloc>(() => CityBloc());
+    getIt.registerLazySingleton<CityDataSource>(() => CityDataSourceImpl(getIt<GenericDataSource>()));
+    getIt.registerLazySingleton<CityBloc>(() => CityBloc(getIt<CityDataSource>())..add(GetCitiesEvent()));
 
     // getIt.registerLazySingleton<SyncBloc>(() => SyncBloc(syncManager: getIt<SyncManager>(), connectivityService: getIt<ConnectivityService>()));
   }

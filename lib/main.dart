@@ -15,7 +15,7 @@ import 'core/localization/translation_service.dart';
 import 'core/notification/messaging_config.dart';
 import 'core/router/router.dart';
 import 'core/service_locator/service_locator.dart';
-import 'features/home/blocs/bookings_bloc.dart';
+import 'features/home/blocs/booking/bookings_bloc.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -65,9 +65,6 @@ class MyApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => getIt<LocaleBloc>(),
-            ),
-            BlocProvider(
-              create: (context) => getIt<CityBloc>(),
             ),
             BlocProvider(
               create: (context) => BookingsBloc(

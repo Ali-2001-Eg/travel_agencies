@@ -175,5 +175,6 @@
   "shaleeh": "Chalet",
   "studio": "Studio",
   "department": "Wohnung",
-  "villa": "Villa"
+  "villa": "Villa",
+  "select_city": "Stadt auswählen"
 }

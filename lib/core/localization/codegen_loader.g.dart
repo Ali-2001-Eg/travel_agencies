@@ -191,7 +191,8 @@ class CodegenLoader extends AssetLoader{
   "shaleeh": "小木屋",
   "studio": "单间公寓",
   "department": "公寓",
-  "villa": "别墅"
+  "villa": "别墅",
+  "select_city": "选择城市"
 };
 static const Map<String,dynamic> _ja = {
   "hello": "こんにちは",
@@ -361,7 +362,8 @@ static const Map<String,dynamic> _ja = {
   "shaleeh": "シャレー",
   "studio": "スタジオ",
   "department": "マンション",
-  "villa": "ヴィラ"
+  "villa": "ヴィラ",
+  "select_city": "都市を選択"
 };
 static const Map<String,dynamic> _de = {
   "hello": "Hallo",
@@ -540,7 +542,8 @@ static const Map<String,dynamic> _de = {
   "shaleeh": "Chalet",
   "studio": "Studio",
   "department": "Wohnung",
-  "villa": "Villa"
+  "villa": "Villa",
+  "select_city": "Stadt auswählen"
 };
 static const Map<String,dynamic> _ru = {
   "hello": "Привет",
@@ -719,7 +722,8 @@ static const Map<String,dynamic> _ru = {
   "shaleeh": "Шале",
   "studio": "Студия",
   "department": "Квартира",
-  "villa": "Вилла"
+  "villa": "Вилла",
+  "select_city": "Выберите город"
 };
 static const Map<String,dynamic> _pl = {
   "hello": "Cześć",
@@ -898,7 +902,8 @@ static const Map<String,dynamic> _pl = {
   "shaleeh": "Domek",
   "studio": "Studio",
   "department": "Mieszkanie",
-  "villa": "Willa"
+  "villa": "Willa",
+  "select_city": "Wybierz miasto"
 };
 static const Map<String,dynamic> _en = {
   "hello": "Hello",
@@ -1077,7 +1082,8 @@ static const Map<String,dynamic> _en = {
   "shaleeh": "Shaleeh",
   "studio": "Studio",
   "department": "Department",
-  "villa": "Villa"
+  "villa": "Villa",
+  "select_city": "Select City"
 };
 static const Map<String,dynamic> _it = {
   "hello": "Ciao",
@@ -1256,7 +1262,8 @@ static const Map<String,dynamic> _it = {
   "shaleeh": "Chalet",
   "studio": "Studio",
   "department": "Appartamento",
-  "villa": "Villa"
+  "villa": "Villa",
+  "select_city": "Seleziona città"
 };
 static const Map<String,dynamic> _fr = {
   "hello": "Bonjour",
@@ -1435,7 +1442,8 @@ static const Map<String,dynamic> _fr = {
   "shaleeh": "Chalet",
   "studio": "Studio",
   "department": "Appartement",
-  "villa": "Villa"
+  "villa": "Villa",
+  "select_city": "Sélectionner une ville"
 };
 static const Map<String,dynamic> _es = {
   "hello": "Hola",
@@ -1614,7 +1622,8 @@ static const Map<String,dynamic> _es = {
   "shaleeh": "Chalet",
   "studio": "Estudio",
   "department": "Departamento",
-  "villa": "Villa"
+  "villa": "Villa",
+  "select_city": "Seleccionar ciudad"
 };
 static const Map<String,dynamic> _ar = {
   "hello": "اهلا",
@@ -1786,7 +1795,8 @@ static const Map<String,dynamic> _ar = {
   "shaleeh": "شاليهات",
   "studio": "ستوديو",
   "department": "شقق",
-  "villa": "فيلات"
+  "villa": "فيلات",
+  "select_city": "اختر المدينة"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"zh": _zh, "ja": _ja, "de": _de, "ru": _ru, "pl": _pl, "en": _en, "it": _it, "fr": _fr, "es": _es, "ar": _ar};
 }

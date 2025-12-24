@@ -198,7 +198,7 @@ class ExcursionCard extends StatelessWidget {
             fit: BoxFit.cover,
             placeholder: (context, url) => Container(
               color: Colors.grey[300],
-              child: const Center(child: CircularProgressIndicator()),
+              child: const Center(child: CircularProgressIndicator.adaptive()),
             ),
             errorWidget: (context, url, error) => Container(
               color: Colors.grey[300],
