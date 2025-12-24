@@ -6,4 +6,5 @@ abstract interface class Routes {
   static const String register = "/register";
   static const String home = "/home";
   static const String otp = "/otp";
+  static const String onboarding = "/onboarding";
 }

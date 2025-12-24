@@ -192,7 +192,15 @@ class CodegenLoader extends AssetLoader{
   "studio": "单间公寓",
   "department": "公寓",
   "villa": "别墅",
-  "select_city": "选择城市"
+  "select_city": "选择城市",
+  "onboarding_title_1": "探索世界",
+  "onboarding_subtitle_1": "发现为您量身定制的隐藏瑰宝和令人惊叹的目的地。",
+  "onboarding_title_2": "奢华住宿",
+  "onboarding_subtitle_2": "在精心挑选的酒店和独特的住宿中体验世界级的款待。",
+  "onboarding_title_3": "轻松旅程",
+  "onboarding_subtitle_3": "轻松规划和预订您的整个行程，从航班到当地旅游。",
+  "get_started": "开始吧",
+  "skip": "跳过"
 };
 static const Map<String,dynamic> _ja = {
   "hello": "こんにちは",
@@ -363,7 +371,15 @@ static const Map<String,dynamic> _ja = {
   "studio": "スタジオ",
   "department": "マンション",
   "villa": "ヴィラ",
-  "select_city": "都市を選択"
+  "select_city": "都市を選択",
+  "onboarding_title_1": "世界を探索する",
+  "onboarding_subtitle_1": "あなたにぴったりの隠れた名所や息を呑むような目的地を発見してください。",
+  "onboarding_title_2": "ラグジュアリーな滞在",
+  "onboarding_subtitle_2": "厳選されたホテルやユニークな滞在先で、ワールドクラスのおもてなしを体験してください。",
+  "onboarding_title_3": "楽な旅",
+  "onboarding_subtitle_3": "フライトからローカルツアーまで、旅行全体を簡単に計画・予約できます。",
+  "get_started": "始める",
+  "skip": "スキップ"
 };
 static const Map<String,dynamic> _de = {
   "hello": "Hallo",
@@ -543,7 +559,15 @@ static const Map<String,dynamic> _de = {
   "studio": "Studio",
   "department": "Wohnung",
   "villa": "Villa",
-  "select_city": "Stadt auswählen"
+  "select_city": "Stadt auswählen",
+  "onboarding_title_1": "Entdecke die Welt",
+  "onboarding_subtitle_1": "Entdecken Sie versteckte Schätze und atemberaubende Reiseziele, die genau auf Sie zugeschnitten sind.",
+  "onboarding_title_2": "Luxusaufenthalte",
+  "onboarding_subtitle_2": "Erleben Sie erstklassige Gastfreundschaft in handverlesenen Hotels und einzigartigen Unterkünften.",
+  "onboarding_title_3": "Müheloses Reisen",
+  "onboarding_subtitle_3": "Planen und buchen Sie Ihre gesamte Reise mit Leichtigkeit, von Flügen bis hin zu lokalen Touren.",
+  "get_started": "Loslegen",
+  "skip": "Überspringen"
 };
 static const Map<String,dynamic> _ru = {
   "hello": "Привет",
@@ -723,7 +747,15 @@ static const Map<String,dynamic> _ru = {
   "studio": "Студия",
   "department": "Квартира",
   "villa": "Вилла",
-  "select_city": "Выберите город"
+  "select_city": "Выберите город",
+  "onboarding_title_1": "Исследуйте мир",
+  "onboarding_subtitle_1": "Откройте для себя скрытые жемчужины и захватывающие дух места, созданные специально для вас.",
+  "onboarding_title_2": "Роскошный отдых",
+  "onboarding_subtitle_2": "Ощутите гостеприимство мирового уровня в тщательно отобранных отелях и уникальных местах проживания.",
+  "onboarding_title_3": "Путешествие без усилий",
+  "onboarding_subtitle_3": "С легкостью планируйте и бронируйте всю поездку: от авиабилетов до местных туров.",
+  "get_started": "Начать",
+  "skip": "Пропустить"
 };
 static const Map<String,dynamic> _pl = {
   "hello": "Cześć",
@@ -903,7 +935,15 @@ static const Map<String,dynamic> _pl = {
   "studio": "Studio",
   "department": "Mieszkanie",
   "villa": "Willa",
-  "select_city": "Wybierz miasto"
+  "select_city": "Wybierz miasto",
+  "onboarding_title_1": "Odkrywaj świat",
+  "onboarding_subtitle_1": "Odkryj ukryte skarby i zapierające dech w piersiach kierunki, skrojone idealnie dla Ciebie.",
+  "onboarding_title_2": "Luksusowe pobyty",
+  "onboarding_subtitle_2": "Doświadcz światowej klasy gościnności w starannie dobranych hotelach i unikalnych miejscach.",
+  "onboarding_title_3": "Podróż bez wysiłku",
+  "onboarding_subtitle_3": "Z łatwością planuj i rezerwuj całą podróż, od lotów po lokalne wycieczki.",
+  "get_started": "Zacznij",
+  "skip": "Pomiń"
 };
 static const Map<String,dynamic> _en = {
   "hello": "Hello",
@@ -1083,7 +1123,15 @@ static const Map<String,dynamic> _en = {
   "studio": "Studio",
   "department": "Department",
   "villa": "Villa",
-  "select_city": "Select City"
+  "select_city": "Select City",
+  "onboarding_title_1": "Explore the World",
+  "onboarding_subtitle_1": "Discover hidden gems and breathtaking destinations tailored just for you.",
+  "onboarding_title_2": "Luxury Stays",
+  "onboarding_subtitle_2": "Experience world-class hospitality in handpicked hotels and unique stays.",
+  "onboarding_title_3": "Effortless Travel",
+  "onboarding_subtitle_3": "Plan and book your entire trip with ease, from flights to local tours.",
+  "get_started": "Get Started",
+  "skip": "Skip"
 };
 static const Map<String,dynamic> _it = {
   "hello": "Ciao",
@@ -1263,7 +1311,15 @@ static const Map<String,dynamic> _it = {
   "studio": "Studio",
   "department": "Appartamento",
   "villa": "Villa",
-  "select_city": "Seleziona città"
+  "select_city": "Seleziona città",
+  "onboarding_title_1": "Esplora il mondo",
+  "onboarding_subtitle_1": "Scopri gemme nascoste e destinazioni mozzafiato su misura per te.",
+  "onboarding_title_2": "Soggiorni di lusso",
+  "onboarding_subtitle_2": "Sperimenta un'ospitalità di classe mondiale in hotel selezionati e soggiorni unici.",
+  "onboarding_title_3": "Viaggio senza sforzo",
+  "onboarding_subtitle_3": "Pianifica e prenota l'intero viaggio con facilità, dai voli ai tour locali.",
+  "get_started": "Iniziare",
+  "skip": "Saltare"
 };
 static const Map<String,dynamic> _fr = {
   "hello": "Bonjour",
@@ -1443,7 +1499,15 @@ static const Map<String,dynamic> _fr = {
   "studio": "Studio",
   "department": "Appartement",
   "villa": "Villa",
-  "select_city": "Sélectionner une ville"
+  "select_city": "Sélectionner une ville",
+  "onboarding_title_1": "Explorer le monde",
+  "onboarding_subtitle_1": "Découvrez des joyaux cachés et des destinations à couper le souffle, conçus rien que pour vous.",
+  "onboarding_title_2": "Séjours de luxe",
+  "onboarding_subtitle_2": "Découvrez l'hospitalité de classe mondiale dans des hôtels triés sur le volet et des séjours uniques.",
+  "onboarding_title_3": "Voyage sans effort",
+  "onboarding_subtitle_3": "Planifiez et réservez l'intégralité de votre voyage en toute simplicité, des vols aux visites locales.",
+  "get_started": "Commencer",
+  "skip": "Passer"
 };
 static const Map<String,dynamic> _es = {
   "hello": "Hola",
@@ -1623,7 +1687,15 @@ static const Map<String,dynamic> _es = {
   "studio": "Estudio",
   "department": "Departamento",
   "villa": "Villa",
-  "select_city": "Seleccionar ciudad"
+  "select_city": "Seleccionar ciudad",
+  "onboarding_title_1": "Explora el mundo",
+  "onboarding_subtitle_1": "Descubra tesoros ocultos y destinos impresionantes adaptados a sus gustos.",
+  "onboarding_title_2": "Estancias de lujo",
+  "onboarding_subtitle_2": "Disfrute de una hospitalidad de clase mundial en hoteles seleccionados y estancias únicas.",
+  "onboarding_title_3": "Viaje sin esfuerzo",
+  "onboarding_subtitle_3": "Planifique y reserve todo su viaje con facilidad, desde vuelos hasta recorridos locales.",
+  "get_started": "Empezar",
+  "skip": "Saltar"
 };
 static const Map<String,dynamic> _ar = {
   "hello": "اهلا",
@@ -1796,7 +1868,15 @@ static const Map<String,dynamic> _ar = {
   "studio": "ستوديو",
   "department": "شقق",
   "villa": "فيلات",
-  "select_city": "اختر المدينة"
+  "select_city": "اختر المدينة",
+  "onboarding_title_1": "استكشف العالم",
+  "onboarding_subtitle_1": "اكتشف الجواهر الخفية والوجهات الخلابة المصممة خصيصاً لك.",
+  "onboarding_title_2": "إقامات فاخرة",
+  "onboarding_subtitle_2": "جرب الضيافة العالمية في فنادق مختارة وإقامات فريدة.",
+  "onboarding_title_3": "سفر بدون مجهود",
+  "onboarding_subtitle_3": "خطط واحجز رحلتك بالكامل بسهولة، من الرحلات الجوية إلى الجولات المحلية.",
+  "get_started": "ابدأ الآن",
+  "skip": "تخطي"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"zh": _zh, "ja": _ja, "de": _de, "ru": _ru, "pl": _pl, "en": _en, "it": _it, "fr": _fr, "es": _es, "ar": _ar};
 }

@@ -181,5 +181,13 @@ abstract class  LocaleKeys {
   static const department = 'department';
   static const villa = 'villa';
   static const select_city = 'select_city';
+  static const onboarding_title_1 = 'onboarding_title_1';
+  static const onboarding_subtitle_1 = 'onboarding_subtitle_1';
+  static const onboarding_title_2 = 'onboarding_title_2';
+  static const onboarding_subtitle_2 = 'onboarding_subtitle_2';
+  static const onboarding_title_3 = 'onboarding_title_3';
+  static const onboarding_subtitle_3 = 'onboarding_subtitle_3';
+  static const get_started = 'get_started';
+  static const skip = 'skip';
 
 }

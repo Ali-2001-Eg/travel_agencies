@@ -92,6 +92,15 @@ flutter:
           weight: 900
         - asset: assets/fonts/Cairo/static/Cairo-ExtraBold.ttf
           weight: 800
+    - family: DMSerifDisplay
+      fonts:
+        - asset: assets/fonts/DMSerifDisplay-Regular.ttf
+    - family: MarcellusSC
+      fonts:
+        - asset: assets/fonts/MarcellusSC-Regular.ttf
+    - family: Lexend
+      fonts:
+        - asset: assets/fonts/Lexend-Regular.ttf
 
 
 

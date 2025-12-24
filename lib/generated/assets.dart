@@ -2,9 +2,26 @@
 class Assets {
   Assets._();
 
-  static const String cairoCairoVariableFontSlntwght = 'assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf';
+  static const String cairoCairoVariableFontSlntcwght = 'assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf';
   static const String cairoOFL = 'assets/fonts/Cairo/OFL.txt';
   static const String cairoREADME = 'assets/fonts/Cairo/README.txt';
+  static const String fontsDMSerifDisplayRegular = 'assets/fonts/DMSerifDisplay-Regular.ttf';
+  static const String fontsLexendRegular = 'assets/fonts/Lexend-Regular.ttf';
+  static const String fontsMarcellusSCRegular = 'assets/fonts/MarcellusSC-Regular.ttf';
+  static const String imagesBgBlue = 'assets/images/Bg-Blue.png';
+  static const String imagesBgRed = 'assets/images/Bg-Red.png';
+  static const String imagesBgYellow = 'assets/images/Bg-Yellow.png';
+  static const String imagesIllustrationBlue = 'assets/images/Illustration-Blue.png';
+  static const String imagesIllustrationRed = 'assets/images/Illustration-Red.png';
+  static const String imagesIllustrationYellow = 'assets/images/Illustration-Yellow.png';
+  static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesMoonCrescent = 'assets/images/Moon-Crescent.png';
+  static const String imagesSliderBlue = 'assets/images/Slider-Blue.png';
+  static const String imagesSliderRed = 'assets/images/Slider-Red.png';
+  static const String imagesSliderYellow = 'assets/images/Slider-Yellow.png';
+  static const String imagesSplashLogo = 'assets/images/splash_logo.png';
+  static const String imagesSunRed = 'assets/images/Sun-Red.png';
+  static const String imagesSunYellow = 'assets/images/Sun-Yellow.png';
   static const String staticCairoBlack = 'assets/fonts/Cairo/static/Cairo-Black.ttf';
   static const String staticCairoBold = 'assets/fonts/Cairo/static/Cairo-Bold.ttf';
   static const String staticCairoExtraBold = 'assets/fonts/Cairo/static/Cairo-ExtraBold.ttf';
@@ -14,6 +31,14 @@ class Assets {
   static const String staticCairoRegular = 'assets/fonts/Cairo/static/Cairo-Regular.ttf';
   static const String staticCairoSemiBold = 'assets/fonts/Cairo/static/Cairo-SemiBold.ttf';
   static const String translationsAr = 'assets/translations/ar.json';
+  static const String translationsDe = 'assets/translations/de.json';
   static const String translationsEn = 'assets/translations/en.json';
+  static const String translationsEs = 'assets/translations/es.json';
+  static const String translationsFr = 'assets/translations/fr.json';
+  static const String translationsIt = 'assets/translations/it.json';
+  static const String translationsJa = 'assets/translations/ja.json';
+  static const String translationsPl = 'assets/translations/pl.json';
+  static const String translationsRu = 'assets/translations/ru.json';
+  static const String translationsZh = 'assets/translations/zh.json';
 
 }

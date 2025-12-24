@@ -7,6 +7,7 @@ import 'package:travel_agencies/core/theme/theme.dart';
 import '../bloc/blocs.dart';
 import '../../features/auth/auth.dart';
 import '../../features/home/home.dart';
+import '../../features/on_boarding/on_boarding.dart';
 import '../../features/splash/splash_screen.dart';
 import '../../main.dart';
 

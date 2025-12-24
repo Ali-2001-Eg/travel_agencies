@@ -176,5 +176,13 @@
     "studio": "Studio",
     "department": "Mieszkanie",
     "villa": "Willa",
-    "select_city": "Wybierz miasto"
+    "select_city": "Wybierz miasto",
+    "onboarding_title_1": "Odkrywaj świat",
+    "onboarding_subtitle_1": "Odkryj ukryte skarby i zapierające dech w piersiach kierunki, skrojone idealnie dla Ciebie.",
+    "onboarding_title_2": "Luksusowe pobyty",
+    "onboarding_subtitle_2": "Doświadcz światowej klasy gościnności w starannie dobranych hotelach i unikalnych miejscach.",
+    "onboarding_title_3": "Podróż bez wysiłku",
+    "onboarding_subtitle_3": "Z łatwością planuj i rezerwuj całą podróż, od lotów po lokalne wycieczki.",
+    "get_started": "Zacznij",
+    "skip": "Pomiń"
 }

@@ -15,19 +15,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    if (HiveServiceImpl.instance.getAccessToken() == null) {
-      Future.delayed(const Duration(seconds: 2), () {
-        if (mounted) {
-          context.go(Routes.login);
-        }
-      });
-    } else {
-      Future.delayed(const Duration(seconds: 2), () {
-        if (mounted) {
-          context.go(Routes.home);
-        }
-      });
-    }
+    final hive = HiveServiceImpl.instance;
+
+    Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
+
+      if (!hive.isOnboardingVisited()) {
+        context.go(Routes.onboarding);
+      } else if (hive.getAccessToken() == null) {
+        context.go(Routes.onboarding);
+        /// TODO: Add login
+        // context.go(Routes.login);
+      } else {
+        context.go(Routes.home);
+      }
+    });
   }
 
   @override

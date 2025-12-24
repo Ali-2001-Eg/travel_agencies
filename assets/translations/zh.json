@@ -176,5 +176,13 @@
     "studio": "单间公寓",
     "department": "公寓",
     "villa": "别墅",
-    "select_city": "选择城市"
+    "select_city": "选择城市",
+    "onboarding_title_1": "探索世界",
+    "onboarding_subtitle_1": "发现为您量身定制的隐藏瑰宝和令人惊叹的目的地。",
+    "onboarding_title_2": "奢华住宿",
+    "onboarding_subtitle_2": "在精心挑选的酒店和独特的住宿中体验世界级的款待。",
+    "onboarding_title_3": "轻松旅程",
+    "onboarding_subtitle_3": "轻松规划和预订您的整个行程，从航班到当地旅游。",
+    "get_started": "开始吧",
+    "skip": "跳过"
 }

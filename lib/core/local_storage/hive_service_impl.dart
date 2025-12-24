@@ -5,15 +5,18 @@ class HiveServiceImpl implements IUserCache, ITokenCache, IThemeCache {
   static const String userBoxName = 'user_box';
   static const String tokenBoxName = 'token_box';
   static const String themeBoxName = 'theme_box';
+  static const String onboardingBoxName = 'onboarding_box';
 
   // ----------------------- Keys ----------------------
   static const String currentUserKey = 'current_user';
   static const String accessTokenKey = 'access_token';
   static const String themeModeKey = 'theme_mode';
+  static const String isOnboardingVisitedKey = 'is_onboarding_visited';
 
   static Box<UserModel>? _userBox;
   static Box<String>? _tokenBox;
   static Box<String>? _themeBox;
+  static Box<bool>? _onboardingBox;
 
   const HiveServiceImpl._();
 
@@ -26,6 +29,16 @@ class HiveServiceImpl implements IUserCache, ITokenCache, IThemeCache {
     _userBox = await Hive.openBox<UserModel>(userBoxName);
     _tokenBox = await Hive.openBox<String>(tokenBoxName);
     _themeBox = await Hive.openBox<String>(themeBoxName);
+    _onboardingBox = await Hive.openBox<bool>(onboardingBoxName);
+  }
+
+  // ---------------------- Onboarding ----------------------
+  Future<void> saveOnboardingVisited(bool visited) async {
+    await _onboardingBox?.put(isOnboardingVisitedKey, visited);
+  }
+
+  bool isOnboardingVisited() {
+    return _onboardingBox?.get(isOnboardingVisitedKey) ?? false;
   }
 
   // ---------------------- User ----------------------

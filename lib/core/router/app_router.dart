@@ -30,6 +30,10 @@ abstract interface class AppRouter {
         path: Routes.home,
         builder: (context, state) => const HomeScreen(),
       ),
+      GoRoute(
+        path: Routes.onboarding,
+        builder: (context, state) => const OnBoardingScreen(),
+      ),
     ],
   );
 

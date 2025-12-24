@@ -167,5 +167,13 @@
     "studio": "スタジオ",
     "department": "マンション",
     "villa": "ヴィラ",
-    "select_city": "都市を選択"
+    "select_city": "都市を選択",
+    "onboarding_title_1": "世界を探索する",
+    "onboarding_subtitle_1": "あなたにぴったりの隠れた名所や息を呑むような目的地を発見してください。",
+    "onboarding_title_2": "ラグジュアリーな滞在",
+    "onboarding_subtitle_2": "厳選されたホテルやユニークな滞在先で、ワールドクラスのおもてなしを体験してください。",
+    "onboarding_title_3": "楽な旅",
+    "onboarding_subtitle_3": "フライトからローカルツアーまで、旅行全体を簡単に計画・予約できます。",
+    "get_started": "始める",
+    "skip": "スキップ"
 }
