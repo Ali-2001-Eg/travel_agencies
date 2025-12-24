@@ -2,8 +2,15 @@ part of 'on_boarding.dart';
 
 class FluidCarousel extends StatefulWidget {
   final List<Widget> children;
+  final Widget? terminalWidget;
+  final VoidCallback? onComplete;
 
-  const FluidCarousel({super.key, required this.children});
+  const FluidCarousel({
+    super.key,
+    required this.children,
+    this.terminalWidget,
+    this.onComplete,
+  });
 
   @override
   FluidCarouselState createState() => FluidCarouselState();
@@ -41,28 +48,42 @@ class FluidCarouselState extends State<FluidCarousel>
   @override
   Widget build(BuildContext context) {
     int l = widget.children.length;
+    Widget currentChild = widget.children[_index % l];
+    Widget? nextChild;
+
+    if (_dragIndex != null) {
+      if (_dragIndex! >= l && widget.terminalWidget != null) {
+        nextChild = widget.terminalWidget;
+      } else if (_dragIndex! < 0 && widget.terminalWidget != null) {
+        nextChild = widget.terminalWidget;
+      } else {
+        nextChild = widget.children[_dragIndex! % l];
+      }
+    }
 
     return GestureDetector(
-        key: key,
-        onPanDown: (details) => _handlePanDown(details, _getSize()),
-        onPanUpdate: (details) => _handlePanUpdate(details, _getSize()),
-        onPanEnd: (details) => _handlePanEnd(details, _getSize()),
-        child: Stack(
-          children: <Widget>[
-            widget.children[_index % l],
-            _dragIndex == null
-                ? SizedBox()
-                : ClipPath(
-                    clipBehavior: Clip.hardEdge,
-                    clipper: FluidClipper(edge, margin: 10.0),
-                    child: widget.children[_dragIndex! % l],
-                  ),
-            SunAndMoon(
-              index: _dragIndex ?? 0,
-              isDragComplete: _dragCompleted,
-            )
-          ],
-        ));
+      key: key,
+      onPanDown: (details) => _handlePanDown(details, _getSize()),
+      onPanUpdate: (details) => _handlePanUpdate(details, _getSize()),
+      onPanEnd: (details) => _handlePanEnd(details, _getSize()),
+      child: Stack(
+        children: <Widget>[
+          currentChild,
+          nextChild == null
+              ? const SizedBox()
+              : ClipPath(
+                  clipBehavior: Clip.hardEdge,
+                  clipper: FluidClipper(edge, margin: 10.0),
+                  child: nextChild,
+                ),
+          SunAndMoon(
+            index: _dragIndex ?? 0,
+            isDragComplete: _dragCompleted,
+            show: _dragIndex == null || (_dragIndex! >= 0 && _dragIndex! < l),
+          )
+        ],
+      ),
+    );
   }
 
   Size _getSize() {
@@ -72,7 +93,13 @@ class FluidCarouselState extends State<FluidCarousel>
 
   void _handlePanDown(DragDownDetails details, Size size) {
     if (_dragIndex != null && _dragCompleted) {
-      _index = _dragIndex!;
+      if (_dragIndex! >= widget.children.length || _dragIndex! < 0) {
+        if (widget.onComplete != null) {
+          widget.onComplete!();
+        }
+      } else {
+        _index = _dragIndex!;
+      }
     }
     _dragIndex = null;
     _dragOffset = details.localPosition;
@@ -127,7 +154,7 @@ class FluidCarouselState extends State<FluidCarousel>
     }
     double ratio = dx * _dragDirection / availW;
 
-    if (ratio > 0.8 && availW / width > 0.5) {
+    if (ratio > 0.4 && availW / width > 0.3) {
       _dragCompleted = true;
       edge.farEdgeTension = 0.01;
       edge.edgeTension = 0.0;
@@ -139,5 +166,12 @@ class FluidCarouselState extends State<FluidCarousel>
   // gesture ko khatam krny k liye
   void _handlePanEnd(DragEndDetails details, Size size) {
     edge.applyTouchOffset();
+    if (_dragIndex != null && _dragCompleted) {
+      if (_dragIndex! >= widget.children.length || _dragIndex! < 0) {
+        if (widget.onComplete != null) {
+          widget.onComplete!();
+        }
+      }
+    }
   }
 }

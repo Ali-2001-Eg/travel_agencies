@@ -14,6 +14,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: Stack(
         children: [
           FluidCarousel(
+            onComplete: () {
+              HiveServiceImpl.instance.saveOnboardingVisited(true);
+              context.go(Routes.login);
+            },
+            terminalWidget: Container(
+              color: context.isDarkMode
+                  ? const Color(0xFF1A1A2E)
+                  : const Color(0xFFF5F7FA),
+            ),
             children: <Widget>[
               FluidCard(
                 color: 'Red',

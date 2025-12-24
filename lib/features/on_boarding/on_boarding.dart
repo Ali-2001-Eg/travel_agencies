@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:travel_agencies/core/localization/locale_keys.g.dart';
 import 'package:travel_agencies/core/router/router.dart';
 import 'package:travel_agencies/core/local_storage/local_storage.dart';
+import 'package:travel_agencies/core/extensions/extensions.dart';
 
 part 'components.dart';
 part 'fluid_card.dart';

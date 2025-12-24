@@ -14,7 +14,10 @@ class SunAndMoon extends StatefulWidget {
       'assets/images/Moon-Crescent.png',
     ],
     required this.index,
+    this.show = true,
   });
+
+  final bool show;
 
   @override
   State<StatefulWidget> createState() => _SunAndMoonState();
@@ -55,16 +58,20 @@ class _SunAndMoonState extends State<SunAndMoon>
         curve: Curves.easeOut,
       );
     }
-    return SizedBox(
-      width: double.infinity,
-      height: double.infinity,
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          _buildAssetWithDefaultAngle(0, 240),
-          _buildAssetWithDefaultAngle(1, 30),
-          _buildAssetWithDefaultAngle(2, 180),
-        ],
+    return AnimatedOpacity(
+      opacity: widget.show ? 1 : 0,
+      duration: const Duration(milliseconds: 300),
+      child: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            _buildAssetWithDefaultAngle(0, 240),
+            _buildAssetWithDefaultAngle(1, 30),
+            _buildAssetWithDefaultAngle(2, 180),
+          ],
+        ),
       ),
     );
   }
