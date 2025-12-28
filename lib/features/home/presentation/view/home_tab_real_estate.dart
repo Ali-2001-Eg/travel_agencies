@@ -142,7 +142,6 @@ class _PropertyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         color: context.isDarkMode ? const Color(0xFF2A2A3E) : Colors.white,
         borderRadius: BorderRadius.circular(16),

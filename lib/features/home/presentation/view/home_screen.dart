@@ -20,6 +20,7 @@ class _HomeScaffold extends StatelessWidget {
     return Scaffold(
       backgroundColor: _homeBackgroundColor(context),
       body: SafeArea(
+        bottom: false,
         child: NestedScrollView(
           physics: const BouncingScrollPhysics(),
           headerSliverBuilder: (context, innerBoxIsScrolled) {
