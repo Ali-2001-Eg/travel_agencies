@@ -20,7 +20,7 @@ abstract interface class AppTextTheme {
     final context = navigatorKey.currentContext;
     if (context != null && context.isTablet) {
       // Reduce font size by 20% for tablets to prevent oversized text
-      return mobileFontSize * 0.8;
+      return mobileFontSize * 0.7;
     }
     return mobileFontSize;
   }

@@ -152,27 +152,32 @@ class _HomeTabView extends StatelessWidget {
         Gaps.v(16),
         SizedBox(
           height: 380,
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              final excursion = excursions[index];
-              return Container(
-                width: context.responsive(300.0, 350.0),
-                margin: const EdgeInsets.only(right: 16),
-                child: ExcursionCard(
-                  excursion: excursion,
-                  isFavorite: state.favoriteIds.contains(excursion.id),
-                  onToggleFavorite: () {
-                    context
-                        .read<HomeNavigationBloc>()
-                        .add(ToggleFavoriteEvent(excursion.id));
-                  },
-                  onBook: () => _showBookingSheet(context, excursion, false),
-                ),
-              );
-            },
+          child: MediaQuery.removePadding(
+            context: context,
+            removeRight: true,
+            removeLeft: true,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                final excursion = excursions[index];
+                return Container(
+                  width: context.responsive(300.0, 350.0),
+                  margin: const EdgeInsets.only(right: 16),
+                  child: ExcursionCard(
+                    excursion: excursion,
+                    isFavorite: state.favoriteIds.contains(excursion.id),
+                    onToggleFavorite: () {
+                      context
+                          .read<HomeNavigationBloc>()
+                          .add(ToggleFavoriteEvent(excursion.id));
+                    },
+                    onBook: () => _showBookingSheet(context, excursion, false),
+                  ),
+                );
+              },
+            ),
           ),
         ),
         Gaps.v(24),

@@ -33,22 +33,36 @@ class _OffersTabView extends StatelessWidget {
       ),
     ];
 
-    return ListView.separated(
+    return CustomScrollView(
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.all(20),
-      itemCount: offers.length,
-      separatorBuilder: (context, index) => Gaps.v(16),
-      itemBuilder: (context, index) {
-        final offer = offers[index];
-        return ExcursionCard(
-          excursion: offer,
-          isFavorite: false, // Defaulting to false for offers
-          onToggleFavorite: () {
-            // Logic to toggle favorite if needed
-          },
-          onBook: () => _showBookingSheet(context, offer, false),
-        );
-      },
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.all(20),
+          sliver: SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: context.responsive(1, 2),
+              childAspectRatio: context.responsive(1.3, 0.8),
+              crossAxisSpacing: context.responsive(0.0, 16.0),
+              mainAxisSpacing: 16,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final offer = offers[index];
+                return ExcursionCard(
+                  excursion: offer,
+                  isFavorite: false, // Defaulting to false for offers
+                  showStackedCategories: true,
+                  onToggleFavorite: () {
+                    // Logic to toggle favorite if needed
+                  },
+                  onBook: () => _showBookingSheet(context, offer, false),
+                );
+              },
+              childCount: offers.length,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

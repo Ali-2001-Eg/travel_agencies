@@ -6,12 +6,14 @@ class ExcursionCard extends StatelessWidget {
   final VoidCallback onToggleFavorite;
   final VoidCallback onBook;
 
+  final bool showStackedCategories;
   const ExcursionCard({
     super.key,
     required this.excursion,
     required this.isFavorite,
     required this.onToggleFavorite,
     required this.onBook,
+    this.showStackedCategories = false,
   });
 
   @override
@@ -136,7 +138,6 @@ class ExcursionCard extends StatelessWidget {
                                 color: context.isDarkMode
                                     ? Colors.white
                                     : Colors.black87,
-                                
                               ),
                             ),
                             LocalizedLabel(
@@ -227,29 +228,26 @@ class ExcursionCard extends StatelessWidget {
         Positioned(
           top: 12,
           left: 12,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF14B8A6), Color(0xFF0D9488)],
-              ),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
-                  blurRadius: 8,
-                ),
-              ],
-            ),
-            child: Text(
-              _getCategoryLabel(excursion.category),
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
+          child: showStackedCategories
+              ? Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    // Back stacks
+                    Positioned(
+                      left: 8,
+                      top: 4,
+                      child: _buildCategoryBadge(context, opacity: 0.3),
+                    ),
+                    Positioned(
+                      left: 4,
+                      top: 2,
+                      child: _buildCategoryBadge(context, opacity: 0.6),
+                    ),
+                    // Front badge
+                    _buildCategoryBadge(context),
+                  ],
+                )
+              : _buildCategoryBadge(context),
         ),
         // Favorite button (top-right)
         Positioned(
@@ -305,6 +303,37 @@ class ExcursionCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildCategoryBadge(BuildContext context, {double opacity = 1.0}) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xFF14B8A6).withValues(alpha: opacity),
+            const Color(0xFF0D9488).withValues(alpha: opacity),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: opacity == 1.0
+            ? [
+                BoxShadow(
+                  color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                  blurRadius: 8,
+                ),
+              ]
+            : null,
+      ),
+      child: Text(
+        _getCategoryLabel(excursion.category),
+        style: TextStyle(
+          color: Colors.white.withValues(alpha: opacity),
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
     );
   }
 

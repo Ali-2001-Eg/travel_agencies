@@ -23,9 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
       if (!hive.isOnboardingVisited()) {
         context.go(Routes.onboarding);
       } else if (hive.getAccessToken() == null) {
-        context.go(Routes.onboarding);
+        // context.go(Routes.onboarding);
 
-        // context.go(Routes.login);
+        context.go(Routes.login);
       } else {
         context.go(Routes.home);
       }

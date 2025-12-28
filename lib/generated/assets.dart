@@ -2,7 +2,7 @@
 class Assets {
   Assets._();
 
-  static const String cairoCairoVariableFontSlntcwght = 'assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf';
+  static const String cairoCairoVariableFontSlntwght = 'assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf';
   static const String cairoOFL = 'assets/fonts/Cairo/OFL.txt';
   static const String cairoREADME = 'assets/fonts/Cairo/README.txt';
   static const String fontsDMSerifDisplayRegular = 'assets/fonts/DMSerifDisplay-Regular.ttf';

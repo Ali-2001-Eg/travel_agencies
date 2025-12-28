@@ -25,7 +25,7 @@ class _RealEstateContent extends StatelessWidget {
             builder: (context, state) {
               return AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: _buildCategoryView(state.activeCategory),
+                child: _buildCategoryView(context, state.activeCategory),
               );
             },
           ),
@@ -34,23 +34,38 @@ class _RealEstateContent extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryView(RealEstateCategory category) {
+  Widget _buildCategoryView(BuildContext context, RealEstateCategory category) {
     // For now, returning a common placeholder UI for each category
     // but clearly labeled. Consistent with the user request for 4 sections.
-    return ListView.builder(
+    return CustomScrollView(
       key: ValueKey(category),
-      padding: const EdgeInsets.all(20),
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return _PropertyCard(
-          title: "${category.name.tr()} ${index + 1}",
-          description:
-              "Beautiful ${category.name.tr()} in a prime location in Egypt.",
-          price: "150,000 \$",
-          imageUrl:
-              "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80",
-        );
-      },
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.all(20),
+          sliver: SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: context.responsive(1, 2),
+              childAspectRatio: context.responsive(0.8, .95),
+              crossAxisSpacing: context.responsive(0.0, 16.0),
+              mainAxisSpacing: 16,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return _PropertyCard(
+                  title: "${category.name.tr()} ${index + 1}",
+                  description:
+                      "Beautiful ${category.name.tr()} in a prime location in Egypt.",
+                  price: "150,000 \$",
+                  imageUrl:
+                      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80",
+                );
+              },
+              childCount: 5,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -146,7 +161,7 @@ class _PropertyCard extends StatelessWidget {
             borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
             child: CachedNetworkImage(
               imageUrl: imageUrl,
-              height: 180,
+              height: context.responsive(180.0, 240.0),
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -198,7 +213,10 @@ class _PropertyCard extends StatelessWidget {
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
-                    child: LocalizedLabel(text: LocaleKeys.book_now),
+                    child: LocalizedLabel(
+                      text: LocaleKeys.book_now,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
