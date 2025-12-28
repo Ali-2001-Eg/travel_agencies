@@ -60,6 +60,6 @@ part 'presentation/widgets/booking_dialog.dart';
 part 'presentation/widgets/service_request_dialog.dart';
 part 'presentation/widgets/upcoming_bookings_card.dart';
 part 'presentation/widgets/booking_reminder_badge.dart';
+part 'presentation/widgets/category_stack.dart';
 part 'models/city_model.dart';
 part 'data_source/city_data_source.dart';
-

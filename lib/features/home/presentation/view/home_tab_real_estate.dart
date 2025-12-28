@@ -46,7 +46,7 @@ class _RealEstateContent extends StatelessWidget {
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: context.responsive(1, 2),
-              childAspectRatio: context.responsive(0.8, .95),
+              childAspectRatio: context.responsive(1.2, .95),
               crossAxisSpacing: context.responsive(0.0, 16.0),
               mainAxisSpacing: 16,
             ),

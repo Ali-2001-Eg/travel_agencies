@@ -228,26 +228,10 @@ class ExcursionCard extends StatelessWidget {
         Positioned(
           top: 12,
           left: 12,
-          child: showStackedCategories
-              ? Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    // Back stacks
-                    Positioned(
-                      left: 8,
-                      top: 4,
-                      child: _buildCategoryBadge(context, opacity: 0.3),
-                    ),
-                    Positioned(
-                      left: 4,
-                      top: 2,
-                      child: _buildCategoryBadge(context, opacity: 0.6),
-                    ),
-                    // Front badge
-                    _buildCategoryBadge(context),
-                  ],
-                )
-              : _buildCategoryBadge(context),
+          child: StackedCategories(
+            categories: excursion.categories,
+            showStacked: showStackedCategories,
+          ),
         ),
         // Favorite button (top-right)
         Positioned(
@@ -304,53 +288,5 @@ class ExcursionCard extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  Widget _buildCategoryBadge(BuildContext context, {double opacity = 1.0}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            const Color(0xFF14B8A6).withValues(alpha: opacity),
-            const Color(0xFF0D9488).withValues(alpha: opacity),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: opacity == 1.0
-            ? [
-                BoxShadow(
-                  color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
-                  blurRadius: 8,
-                ),
-              ]
-            : null,
-      ),
-      child: Text(
-        _getCategoryLabel(excursion.category),
-        style: TextStyle(
-          color: Colors.white.withValues(alpha: opacity),
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    );
-  }
-
-  String _getCategoryLabel(ExcursionCategory category) {
-    switch (category) {
-      case ExcursionCategory.snorkeling:
-        return 'Snorkeling';
-      case ExcursionCategory.diving:
-        return 'Diving';
-      case ExcursionCategory.safari:
-        return 'Safari';
-      case ExcursionCategory.cultural:
-        return 'Cultural';
-      case ExcursionCategory.adventure:
-        return 'Adventure';
-      default:
-        return 'All';
-    }
   }
 }

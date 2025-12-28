@@ -17,7 +17,11 @@ class _OffersTabView extends StatelessWidget {
         rating: 4.8,
         location: "Desert",
         duration: "5 hours",
-        category: ExcursionCategory.safari,
+        categories: const [
+          ExcursionCategory.safari,
+          ExcursionCategory.adventure,
+          ExcursionCategory.cultural
+        ],
       ),
       ExcursionModel(
         id: 102,
@@ -29,7 +33,10 @@ class _OffersTabView extends StatelessWidget {
         rating: 4.9,
         location: "Red Sea",
         duration: "1 day",
-        category: ExcursionCategory.diving,
+        categories: const [
+          ExcursionCategory.diving,
+          ExcursionCategory.snorkeling
+        ],
       ),
     ];
 
